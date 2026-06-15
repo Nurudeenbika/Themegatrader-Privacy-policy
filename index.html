@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Themegatrader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:             #0B0F19;
+      --surface:        #111827;
+      --surface-2:      #1A2235;
+      --border:         #1F2D44;
+      --accent:         #2563EB;
+      --accent-dim:     rgba(37,99,235,0.12);
+      --accent-glow:    rgba(37,99,235,0.25);
+      --text-primary:   #F0F4FF;
+      --text-secondary: #8B9DC3;
+      --text-muted:     #4B5E82;
+      --green:          #10B981;
+      --radius:         10px;
+      --radius-lg:      16px;
+      --font-display:   'Syne', sans-serif;
+      --font-body:      'Inter', sans-serif;
+      --sidebar-w:      268px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .layout { display: flex; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      overflow-y: auto;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .sb-brand {
+      padding: 28px 24px 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sb-brand .wordmark {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .sb-brand .doc-type {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+    .sb-nav { padding: 14px 10px; flex: 1; }
+    .sb-nav a {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      line-height: 1.45;
+      transition: background 0.14s, color 0.14s;
+    }
+    .sb-nav a:hover, .sb-nav a.active {
+      background: var(--accent-dim);
+      color: var(--text-primary);
+    }
+    .sb-nav a .n {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      min-width: 18px;
+      letter-spacing: 0.04em;
+    }
+    .sb-footer {
+      padding: 18px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Main ── */
+    .main {
+      flex: 1;
+      min-width: 0;
+      padding: 60px 56px 100px 56px;
+      max-width: 960px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      margin-bottom: 56px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -60px -56px 0 -56px;
+      background: radial-gradient(ellipse 55% 280px at 25% 0%, var(--accent-glow), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .hero-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: blink 2.5s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.35; transform:scale(0.65); }
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.6vw, 42px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 22px;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 20px;
+    }
+    .hero-meta-item .lbl {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--text-muted);
+    }
+    .hero-meta-item .val {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* ── Acceptance notice ── */
+    .notice {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      border: 1px solid var(--accent);
+      background: var(--accent-dim);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 52px;
+    }
+    .notice svg { flex-shrink:0; width:18px; height:18px; color:var(--accent); margin-top:2px; }
+    .notice p { font-size:13.5px; color:var(--text-secondary); line-height:1.7; margin:0; }
+    .notice p strong { color:var(--text-primary); font-weight:500; }
+
+    /* ── Section wrapper ── */
+    .tsec {
+      margin-bottom: 64px;
+      scroll-margin-top: 28px;
+    }
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 26px;
+    }
+    .sec-num {
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      min-width: 30px;
+    }
+    .sec-head h2 {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    /* ── Subsection ── */
+    .sub { margin-bottom: 32px; }
+    .sub h3 {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 11px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sub h3::before {
+      content: '';
+      display: inline-block;
+      width: 3px; height: 13px;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── Sub-sub heading ── */
+    .sub h4 {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 18px 0 8px;
+    }
+
+    /* ── Paragraphs ── */
+    p { color: var(--text-secondary); font-size: 14.5px; margin-bottom: 13px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text-primary); font-weight: 500; }
+
+    /* ── Bullet lists ── */
+    ul.tl {
+      list-style: none;
+      margin: 10px 0 14px 0;
+    }
+    ul.tl li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--text-secondary);
+      font-size: 14.5px;
+      margin-bottom: 7px;
+      line-height: 1.72;
+    }
+    ul.tl li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.45;
+    }
+
+    /* ── Definition cards ── */
+    .def-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 13px;
+      margin: 18px 0;
+    }
+    .def-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 15px 17px;
+      transition: border-color 0.14s;
+    }
+    .def-card:hover { border-color: var(--accent); }
+    .def-card .term {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .def-card p { font-size: 13px; margin: 0; }
+
+    /* ── Contact cards ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(238px,1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .contact-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      transition: border-color 0.14s, transform 0.14s;
+    }
+    .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .contact-card .cc-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 9px;
+    }
+    .contact-card .cc-val { font-size: 13.5px; color: var(--text-primary); font-weight: 500; }
+    .contact-card a { color: var(--accent); text-decoration: none; font-size: 13.5px; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Divider ── */
+    .rule { border:none; border-top:1px solid var(--border); margin: 44px 0; }
+
+    /* ── Back-to-top ── */
+    #btt {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s, transform 0.18s;
+      z-index: 200;
+    }
+    #btt.show { opacity:1; pointer-events:all; }
+    #btt:hover { transform: translateY(-3px); }
+    #btt svg { width:15px; height:15px; stroke:#fff; fill:none; stroke-width:2.5; stroke-linecap:round; }
+
+    /* ── Responsive ── */
+    @media (max-width: 880px) {
+      .sidebar { display: none; }
+      .main { padding: 36px 22px 72px; }
+    }
+    @media (max-width: 500px) {
+      .main { padding: 24px 14px 56px; }
+      .def-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<button id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<div class="layout">
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
+  <nav class="sidebar" aria-label="Table of contents">
+    <div class="sb-brand">
+      <div class="wordmark">Themegatrader</div>
+      <div class="doc-type">Privacy Policy</div>
+    </div>
+    <div class="sb-nav">
+      <a href="#s1"><span class="n">1</span>Introduction</a>
+      <a href="#s2"><span class="n">2</span>Definitions</a>
+      <a href="#s3"><span class="n">3</span>Information We Collect</a>
+      <a href="#s4"><span class="n">4</span>Information from Third Parties</a>
+      <a href="#s5"><span class="n">5</span>Legal Basis for Processing</a>
+      <a href="#s6"><span class="n">6</span>How We Use Your Information</a>
+      <a href="#s7"><span class="n">7</span>Sharing of Information</a>
+      <a href="#s8"><span class="n">8</span>International Data Transfers</a>
+      <a href="#s9"><span class="n">9</span>Data Retention and Deletion</a>
+      <a href="#s10"><span class="n">10</span>Your Rights as a Data Subject</a>
+      <a href="#s11"><span class="n">11</span>Cookies and Tracking Technologies</a>
+      <a href="#s12"><span class="n">12</span>Children's Privacy</a>
+      <a href="#s13"><span class="n">13</span>Security Measures</a>
+      <a href="#s14"><span class="n">14</span>Data Breach Notification</a>
+      <a href="#s15"><span class="n">15</span>Automated Decision-Making and Fraud Monitoring</a>
+      <a href="#s16"><span class="n">16</span>Data Protection Officer (DPO)</a>
+      <a href="#s17"><span class="n">17</span>Updates to this Privacy Policy</a>
+      <a href="#s18"><span class="n">18</span>Jurisdiction and Governing Law</a>
+      <a href="#s19"><span class="n">19</span>Indemnity and Limitation of Liability</a>
+      <a href="#s20"><span class="n">20</span>Contact Us</a>
+    </div>
+    <div class="sb-footer">© Themega Global Limited.<br>All rights reserved.</div>
+  </nav>
+
+  <!-- ══ MAIN ═════════════════════════════════════════════════ -->
+  <main class="main">
+
+    <header class="hero">
+      <div class="hero-eyebrow"><span class="dot"></span>Legal Document</div>
+      <h1>THEMEGATRADER<br><em>PRIVACY POLICY</em></h1>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="lbl">Company</div>
+          <div class="val">Themega Global Limited</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="lbl">Operating as</div>
+          <div class="val">Themegatrader</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="lbl">Jurisdiction</div>
+          <div class="val">Federal Republic of Nigeria</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="notice">
+      <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+      </svg>
+      <p><strong>By accessing, registering for, or using Themegatrader Services</strong>, you acknowledge and agree that your personal information may be collected, used, stored, processed, transferred, and disclosed in accordance with this Privacy Policy. You also acknowledge that you have read, understood, and agreed to Themegatrader's Terms of Use, AML/KYC Policy, Compliance Policies, and any other policies or agreements incorporated by reference into your contractual relationship with us.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         1. INTRODUCTION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s1">
+      <div class="sec-head">
+        <span class="sec-num">1</span>
+        <h2>INTRODUCTION</h2>
+      </div>
+
+      <p>This Privacy Policy ("Policy") explains how Themega Global Limited (trading as "Themegatrader," "Company," "we," "our," or "us") collects, uses, processes, stores, retains, protects, transfers, discloses and otherwise manages personal information when individuals access, interact with, or use the Themegatrader platform, website, mobile application, application programming interfaces (APIs), telecommunications services, and any related products, features, or services offered by the Company.</p>
+
+      <p>Themegatrader is committed to safeguarding the privacy, confidentiality, integrity, availability, and security of all personal information entrusted to us. We ensure that personal data is processed in a lawful, fair, transparent, accountable, and responsible manner in accordance with applicable data protection principles and regulatory requirements.</p>
+
+      <p>This Policy applies to all users and visitors of the Themegatrader ecosystem, including those accessing or using:</p>
+      <ul class="tl">
+        <li>The official Themegatrader website at www.themegatrader.com;</li>
+        <li>The Themegatrader mobile application(s);</li>
+        <li>Themegatrader APIs, whether accessed directly or through third-party applications or integrations;</li>
+        <li>Cryptocurrency exchange and trading services;</li>
+        <li>Fiat-to-crypto and crypto-to-fiat conversion services;</li>
+        <li>Cryptocurrency marketplace services and related digital asset functionalities;</li>
+        <li>Wallet services, payment processing, deposits, withdrawals, and settlement systems;</li>
+        <li>Telecommunications services, including airtime purchases, mobile data subscriptions, cable television subscriptions, electricity bill payments, utility payments, and other related digital services;</li>
+        <li>Any other products, applications, software systems, websites, or services owned, operated, or controlled by Themega Global Limited.</li>
+      </ul>
+
+      <p>Collectively, these are referred to in this Policy as the "Services" or the "Themegatrader Platform."</p>
+
+      <p>This Privacy Policy is developed and implemented in accordance with applicable legal and regulatory frameworks, including:</p>
+      <ul class="tl">
+        <li>The Nigeria Data Protection Act, 2023 (NDPA);</li>
+        <li>Regulations, guidelines, and directives issued by the Nigeria Data Protection Commission (NDPC);</li>
+        <li>Applicable Anti-Money Laundering (AML) and Counter-Terrorism Financing (CTF) laws and regulations;</li>
+        <li>Other applicable financial services, cybersecurity, telecommunications, and consumer protection laws;</li>
+        <li>International data protection best practices, including principles derived from the General Data Protection Regulation (GDPR), where applicable or relevant.</li>
+      </ul>
+
+      <p>Themegatrader may update or amend this Policy from time to time to reflect changes in legal requirements, regulatory guidance, technological developments, or operational practices, in accordance with the "Updates to this Privacy Policy" section.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         2. DEFINITIONS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s2">
+      <div class="sec-head">
+        <span class="sec-num">2</span>
+        <h2>DEFINITIONS</h2>
+      </div>
+
+      <p>For the purposes of this Privacy Policy, the following terms shall have the meanings set out below. These definitions are intended to ensure clarity and consistent interpretation of the Policy and applicable data protection obligations.</p>
+
+      <div class="def-grid">
+        <div class="def-card">
+          <div class="term">"Personal Data"</div>
+          <p>means any information relating to an identified or identifiable natural person, including information that can directly or indirectly identify an individual, such as name, identification numbers, location data, online identifiers, or other factors specific to the physical, physiological, economic, cultural, or social identity of that person.</p>
+        </div>
+        <div class="def-card">
+          <div class="term">"Sensitive Personal Data"</div>
+          <p>means any category of personal information subject to enhanced protection under applicable data protection laws due to its sensitive nature, including biometric information, facial recognition data, identity verification documents, financial and transactional information, authentication credentials, government-issued identification numbers, and any other data classified as sensitive under applicable law.</p>
+        </div>
+        <div class="def-card">
+          <div class="term">"Processing"</div>
+          <p>means any operation or set of operations performed on personal information, whether or not by automated means, including collection, recording, organization, structuring, storage, adaptation, alteration, retrieval, consultation, use, disclosure, transmission, dissemination, restriction, erasure, anonymization, pseudonymization, analysis, or destruction.</p>
+        </div>
+        <div class="def-card">
+          <div class="term">"Data Subject"</div>
+          <p>means any identified or identifiable natural person whose personal information is collected, stored, used, processed, or otherwise handled by Themegatrader in connection with the use of the Services.</p>
+        </div>
+        <div class="def-card">
+          <div class="term">"Cookies"</div>
+          <p>means small text files or similar tracking technologies stored on a user's device, browser, or application environment used to enable system functionality, authentication, session management, personalization, analytics, performance monitoring, fraud detection, and security-related operations.</p>
+        </div>
+        <div class="def-card">
+          <div class="term">"KYC"</div>
+          <p>means the identity verification and due diligence procedures required under applicable laws and regulations to verify the identity of users, assess risk levels, and ensure compliance with Anti-Money Laundering (AML) and Counter-Terrorism Financing (CTF) obligations.</p>
+        </div>
+        <div class="def-card">
+          <div class="term">"AML/CTF"</div>
+          <p>means the legal, regulatory, and compliance frameworks designed to prevent, detect, and report money laundering, terrorist financing, sanctions violations, fraud, and other financial crimes.</p>
+        </div>
+        <div class="def-card">
+          <div class="term">"Platform"</div>
+          <p>means the Themegatrader digital ecosystem, including but not limited to the official website (www.themegatrader.com), mobile applications, APIs, backend systems, databases, infrastructure, and any related tools, services, or technological systems operated or controlled by Themegatrader for the provision of Services.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         3. INFORMATION WE COLLECT
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s3">
+      <div class="sec-head">
+        <span class="sec-num">3</span>
+        <h2>INFORMATION WE COLLECT</h2>
+      </div>
+
+      <p>Themegatrader collects personal information in several ways: directly from users, automatically through the use of technology when users access or interact with the Services, and from trusted third-party sources where lawful and necessary. All data collection is carried out in accordance with applicable data protection laws, including the Nigeria Data Protection Act, 2023 (NDPA), and is limited to what is relevant, adequate, and necessary for legitimate business, regulatory, security, and operational purposes.</p>
+
+      <div class="sub">
+        <h3>3.1 Information You Provide Directly</h3>
+        <p>When you create an account, access or use Themegatrader Services, complete transactions, communicate with us, or otherwise interact with the Platform, we may collect the following categories of information:</p>
+
+        <h4>A. Identity Information</h4>
+        <p>We may collect identity-related information to verify who you are and ensure compliance with legal and regulatory requirements, including:</p>
+        <ul class="tl">
+          <li>Full legal name;</li>
+          <li>Username or display name;</li>
+          <li>Gender (where required or applicable);</li>
+          <li>Date of birth;</li>
+          <li>Nationality;</li>
+          <li>Residential address;</li>
+          <li>Postal or correspondence address;</li>
+          <li>Government-issued identification numbers or equivalent identifiers.</li>
+        </ul>
+
+        <h4>B. Contact Information</h4>
+        <p>We may collect contact details to communicate with users and provide Services, including:</p>
+        <ul class="tl">
+          <li>Email address;</li>
+          <li>Telephone or mobile number;</li>
+          <li>Residential contact details (where applicable);</li>
+          <li>Billing address and related contact information.</li>
+        </ul>
+
+        <h4>C. Identity Verification Information (KYC / AML Compliance)</h4>
+        <p>For identity verification, regulatory compliance, fraud prevention, sanctions screening, and risk management purposes, we may collect additional information, including:</p>
+        <ul class="tl">
+          <li>National Identification Number (NIN);</li>
+          <li>Bank Verification Number (BVN);</li>
+          <li>Passport details and travel document information;</li>
+          <li>Driver's license details;</li>
+          <li>Tax identification numbers;</li>
+          <li>Utility bills or proof of address documents;</li>
+          <li>Residential verification documents;</li>
+          <li>Selfie images and facial recognition data;</li>
+          <li>Live video verification or liveness checks;</li>
+          <li>Signature verification samples;</li>
+          <li>Enhanced Due Diligence (EDD) documentation where required;</li>
+          <li>Source of funds or source of wealth documentation where legally required.</li>
+        </ul>
+        <p>Themegatrader may request additional documentation or verification information where necessary to comply with legal obligations, regulatory requirements, fraud prevention measures, sanctions screening, suspicious activity monitoring, or when elevated risk indicators are detected.</p>
+
+        <h4>D. Financial Information</h4>
+        <p>Where users engage in financial transactions, trading, payments, or wallet services, we may collect financial-related information, including:</p>
+        <ul class="tl">
+          <li>Bank account details;</li>
+          <li>Account holder name;</li>
+          <li>Payment card details (where applicable);</li>
+          <li>Digital wallet addresses;</li>
+          <li>Cryptocurrency transaction history and records;</li>
+          <li>Deposit and withdrawal details;</li>
+          <li>Beneficiary or recipient information;</li>
+          <li>Transaction references and identifiers;</li>
+          <li>Payment instructions and settlement details.</li>
+        </ul>
+
+        <h4>E. Telecommunications Service Information</h4>
+        <p>Where users access telecommunications-related services through Themegatrader, we may collect information required to process and deliver such services, including:</p>
+        <ul class="tl">
+          <li>Mobile network operator details;</li>
+          <li>Phone numbers used for airtime or data top-ups;</li>
+          <li>Utility service identifiers (where applicable);</li>
+          <li>Cable television subscription details;</li>
+          <li>Electricity meter numbers or account identifiers;</li>
+          <li>Service activation and usage history;</li>
+          <li>Billing and service delivery records.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>3.2 Information Collected Automatically</h3>
+        <p>When users access or interact with Themegatrader Services, we automatically collect certain technical, behavioral, and usage-related information to ensure security, performance, compliance, and service optimization.</p>
+
+        <h4>Device Information</h4>
+        <p>We may automatically collect:</p>
+        <ul class="tl">
+          <li>IP address;</li>
+          <li>Browser type and version;</li>
+          <li>Operating system;</li>
+          <li>Device model and hardware information;</li>
+          <li>Device identifiers;</li>
+          <li>Language settings and preferences;</li>
+          <li>Device fingerprinting and security signals (where legally permitted).</li>
+        </ul>
+
+        <h4>Usage Information</h4>
+        <p>We may collect data about how users interact with the Platform, including:</p>
+        <ul class="tl">
+          <li>Login timestamps and session records;</li>
+          <li>Session duration and activity logs;</li>
+          <li>Navigation paths and user flows;</li>
+          <li>Clickstream and interaction behavior;</li>
+          <li>Authentication attempts and login history;</li>
+          <li>Feature usage and engagement metrics;</li>
+          <li>System performance and error logs.</li>
+        </ul>
+
+        <h4>Transaction Data</h4>
+        <p>We collect detailed transaction and activity-related data for processing, security, compliance, and recordkeeping purposes, including:</p>
+        <ul class="tl">
+          <li>Cryptocurrency wallet addresses;</li>
+          <li>Blockchain transaction identifiers (TXIDs);</li>
+          <li>Trade execution details;</li>
+          <li>Deposit and withdrawal records;</li>
+          <li>Counterparty and recipient information;</li>
+          <li>Fiat transaction data and payment references;</li>
+          <li>Transaction timestamps;</li>
+          <li>Transaction amounts and values;</li>
+          <li>Associated metadata required for compliance and auditing.</li>
+        </ul>
+
+        <h4>Location Information</h4>
+        <p>Where permitted by law and subject to user consent and device permissions, we may collect location-related information such as:</p>
+        <ul class="tl">
+          <li>Approximate geolocation;</li>
+          <li>Precise GPS-based location data (where enabled);</li>
+          <li>Country of access;</li>
+          <li>Regional or network-based location indicators.</li>
+        </ul>
+        <p>Location data may be used for fraud prevention, security monitoring, regulatory compliance, service optimization, and user experience improvements.</p>
+      </div>
+
+      <div class="sub">
+        <h3>3.3 Cookies and Tracking Technologies</h3>
+        <p>Themegatrader uses cookies and similar tracking and monitoring technologies to enhance platform functionality, improve security, and optimize user experience.</p>
+        <p>These technologies may include:</p>
+        <ul class="tl">
+          <li>Cookies (session and persistent);</li>
+          <li>Web beacons;</li>
+          <li>Pixels and tracking tags;</li>
+          <li>Device fingerprinting technologies;</li>
+          <li>Analytics tools and SDKs;</li>
+          <li>Logging and telemetry systems;</li>
+          <li>Security and fraud detection tools.</li>
+        </ul>
+        <p>These technologies may be used for the following purposes:</p>
+        <ul class="tl">
+          <li>Fraud detection and prevention;</li>
+          <li>Security monitoring and threat detection;</li>
+          <li>User authentication and session management;</li>
+          <li>Saving user preferences and settings;</li>
+          <li>Platform performance monitoring and optimization;</li>
+          <li>Usage analytics and behavioral insights;</li>
+          <li>Personalization of user experience;</li>
+          <li>Compliance and risk monitoring activities.</li>
+        </ul>
+        <p>Users may manage certain tracking preferences through browser or device settings, subject to limitations where essential technologies are required for platform security, authentication, or regulatory compliance.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         4. INFORMATION FROM THIRD PARTIES
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s4">
+      <div class="sec-head">
+        <span class="sec-num">4</span>
+        <h2>INFORMATION FROM THIRD PARTIES</h2>
+      </div>
+
+      <p>In addition to information provided directly by users and information collected automatically through the use of Themegatrader Services, we may obtain personal and non-personal information from third-party sources where lawful, necessary, and consistent with applicable data protection regulations, including the Nigeria Data Protection Act, 2023 (NDPA).</p>
+
+      <p>These third-party sources help Themegatrader verify identity, enhance security, prevent fraud, comply with legal obligations, improve service functionality, and maintain the integrity of the Platform.</p>
+
+      <p>Themegatrader may receive information from the following categories of third parties:</p>
+      <ul class="tl">
+        <li>Identity verification and Know Your Customer (KYC) service providers;</li>
+        <li>Financial institutions, banks, and banking partners;</li>
+        <li>Payment processors and payment gateway providers;</li>
+        <li>Blockchain analytics and transaction monitoring companies;</li>
+        <li>Fraud prevention, risk intelligence, and security monitoring agencies;</li>
+        <li>Publicly available databases and publicly accessible sources;</li>
+        <li>Compliance service providers and regulatory technology (RegTech) partners;</li>
+        <li>Telecommunications providers and mobile network operators;</li>
+        <li>Government agencies, law enforcement bodies, and regulatory authorities;</li>
+        <li>Credit reference agencies and credit bureaus, where legally permitted;</li>
+        <li>Sanctions screening databases and anti-money laundering (AML) intelligence providers;</li>
+        <li>Business verification and corporate registry services.</li>
+      </ul>
+
+      <p>The types of information obtained from these third parties may include, where applicable and lawful:</p>
+      <ul class="tl">
+        <li>Identity verification results and authentication outcomes;</li>
+        <li>Risk scores, fraud indicators, and compliance assessments;</li>
+        <li>Transaction history and blockchain-related activity data;</li>
+        <li>Contact details and identity validation information;</li>
+        <li>Sanctions, politically exposed persons (PEP), or watchlist screening results;</li>
+        <li>Creditworthiness or financial reliability data (where legally permitted);</li>
+        <li>Device, IP, or behavioral risk signals provided for security purposes;</li>
+        <li>Publicly available professional or business registration information;</li>
+        <li>Other information required to meet regulatory, compliance, or operational obligations.</li>
+      </ul>
+
+      <p>Themegatrader uses such third-party information to:</p>
+      <ul class="tl">
+        <li>Verify user identity and prevent identity fraud;</li>
+        <li>Comply with AML, CTF, sanctions, and regulatory obligations;</li>
+        <li>Detect and prevent fraud, abuse, and suspicious activity;</li>
+        <li>Improve platform security and risk management systems;</li>
+        <li>Enhance onboarding and verification processes;</li>
+        <li>Support transaction monitoring and compliance investigations;</li>
+        <li>Maintain accurate and up-to-date user records;</li>
+        <li>Ensure lawful and secure delivery of Services.</li>
+      </ul>
+
+      <p>All third-party service providers and data sources used by Themegatrader are required, where applicable, to comply with relevant data protection laws, confidentiality obligations, and security standards. Themegatrader enters into appropriate contractual arrangements with such providers to ensure that personal information is processed securely, lawfully, and only for specified and authorized purposes.</p>
+
+      <p>Where third-party providers act as data processors or joint controllers, they are required to implement appropriate technical and organizational measures to safeguard personal data and to process such data only in accordance with documented instructions or lawful obligations.</p>
+
+      <p>Themegatrader does not knowingly obtain or use information from third parties in a manner that is unlawful or inconsistent with applicable data protection or privacy laws.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         5. LEGAL BASIS FOR PROCESSING
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s5">
+      <div class="sec-head">
+        <span class="sec-num">5</span>
+        <h2>LEGAL BASIS FOR PROCESSING</h2>
+      </div>
+
+      <p>Themegatrader processes personal information only where a valid and lawful basis for such processing exists, in accordance with applicable data protection laws, including the Nigeria Data Protection Act, 2023 (NDPA) and other relevant regulatory frameworks.</p>
+
+      <p>Depending on the nature of the processing activity, the type of personal information involved, and the context in which the Services are used, Themegatrader may rely on one or more of the following legal bases:</p>
+
+      <div class="sub">
+        <h3>A. Consent</h3>
+        <p>Themegatrader may process personal information where users have provided clear, informed, and voluntary consent for specific processing activities.</p>
+        <p>Where processing is based on consent, users have the right to withdraw such consent at any time, subject to legal, regulatory, contractual, or operational limitations.</p>
+        <p>Examples of processing based on consent may include:</p>
+        <ul class="tl">
+          <li>Receiving marketing and promotional communications;</li>
+          <li>Participation in optional promotional campaigns, surveys, or offers;</li>
+          <li>Optional biometric verification processes (where applicable and permitted by law);</li>
+          <li>Use of non-essential or optional cookies and tracking technologies;</li>
+          <li>Subscription to newsletters, updates, or service announcements beyond core service communications.</li>
+        </ul>
+        <p>Withdrawal of consent does not affect the lawfulness of processing carried out prior to withdrawal.</p>
+      </div>
+
+      <div class="sub">
+        <h3>B. Contractual Necessity</h3>
+        <p>Themegatrader processes personal information where it is necessary for the performance of a contract with the user or to take steps prior to entering into such a contract.</p>
+        <p>This includes processing required to:</p>
+        <ul class="tl">
+          <li>Create and maintain user accounts;</li>
+          <li>Verify user identity and eligibility to use the Services;</li>
+          <li>Facilitate buying, selling, exchanging, or trading of digital assets;</li>
+          <li>Execute cryptocurrency transactions and wallet operations;</li>
+          <li>Process payments, deposits, withdrawals, and settlements;</li>
+          <li>Provide telecommunications services, including airtime, data, and bill payments;</li>
+          <li>Deliver customer support and respond to user requests;</li>
+          <li>Maintain account functionality, platform access, and service delivery.</li>
+        </ul>
+        <p>Without such processing, Themegatrader may be unable to provide certain Services to users.</p>
+      </div>
+
+      <div class="sub">
+        <h3>C. Legal and Regulatory Obligations</h3>
+        <p>Themegatrader processes personal information where necessary to comply with applicable legal, regulatory, statutory, and supervisory obligations.</p>
+        <p>Such obligations may arise under, but are not limited to:</p>
+        <ul class="tl">
+          <li>Anti-Money Laundering (AML) regulations and guidelines;</li>
+          <li>Counter-Terrorism Financing (CTF) requirements;</li>
+          <li>Know Your Customer (KYC) and Customer Due Diligence (CDD) obligations;</li>
+          <li>Tax laws, reporting obligations, and financial recordkeeping requirements;</li>
+          <li>Court orders, subpoenas, and legally binding requests;</li>
+          <li>Regulatory investigations, audits, or compliance checks;</li>
+          <li>Requirements issued by financial regulators, data protection authorities, or government agencies;</li>
+          <li>Obligations under the Nigeria Data Protection Act, 2023 (NDPA) and related regulations.</li>
+        </ul>
+        <p>Themegatrader may also retain or disclose personal information where required to meet such legal obligations.</p>
+      </div>
+
+      <div class="sub">
+        <h3>D. Legitimate Interests</h3>
+        <p>Themegatrader may process personal information where it is necessary for the legitimate business interests of the company or third parties, provided that such interests are not overridden by the fundamental rights, freedoms, or interests of the user.</p>
+        <p>Legitimate interests may include:</p>
+        <ul class="tl">
+          <li>Improving and optimizing Services, features, and platform performance;</li>
+          <li>Enhancing user experience and product development;</li>
+          <li>Detecting, preventing, and investigating fraud, abuse, and unauthorized activity;</li>
+          <li>Strengthening platform security and cybersecurity protections;</li>
+          <li>Monitoring system performance, stability, and reliability;</li>
+          <li>Conducting internal analytics, research, and business intelligence;</li>
+          <li>Monitoring suspicious activity and risk-based behaviors;</li>
+          <li>Ensuring operational efficiency and service continuity;</li>
+          <li>Protecting users, systems, infrastructure, and business operations;</li>
+          <li>Managing business growth, planning, and strategic development.</li>
+        </ul>
+        <p>Where processing is based on legitimate interests, Themegatrader applies safeguards such as data minimization, access controls, and risk assessments to ensure that users' rights and interests are not unduly impacted.</p>
+        <p>Themegatrader ensures that each processing activity is properly assessed to determine the most appropriate legal basis, and where multiple lawful grounds may apply, the most appropriate and proportionate basis will be selected in line with applicable legal requirements.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         6. HOW WE USE YOUR INFORMATION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s6">
+      <div class="sec-head">
+        <span class="sec-num">6</span>
+        <h2>HOW WE USE YOUR INFORMATION</h2>
+      </div>
+
+      <p>Themegatrader processes personal information for legitimate business, operational, contractual, regulatory, and legal purposes necessary to provide, maintain, secure, and improve the Services offered through the Themegatrader Platform, including the website, mobile application, APIs, and related digital infrastructure.</p>
+
+      <p>We use personal information in a lawful, fair, and transparent manner, in accordance with applicable data protection laws, including the Nigeria Data Protection Act, 2023 (NDPA), and relevant financial, cybersecurity, telecommunications, and anti-money laundering regulations.</p>
+
+      <p>Themegatrader may use your personal information for the following purposes:</p>
+
+      <div class="sub">
+        <h3>A. Core Service Delivery and Platform Operation</h3>
+        <p>We use information to operate, maintain, and deliver our Services, including:</p>
+        <ul class="tl">
+          <li>Operating and managing user accounts;</li>
+          <li>Providing access to the Themegatrader Platform;</li>
+          <li>Enabling platform functionality and service availability;</li>
+          <li>Processing requests, instructions, and user actions;</li>
+          <li>Ensuring system stability, uptime, and performance;</li>
+          <li>Managing technical infrastructure and platform services.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>B. Identity Verification and Regulatory Compliance</h3>
+        <p>We use personal information to verify identity and comply with legal obligations, including:</p>
+        <ul class="tl">
+          <li>Verifying user identity and account ownership;</li>
+          <li>Conducting Know Your Customer (KYC) checks;</li>
+          <li>Performing Customer Due Diligence (CDD) and Enhanced Due Diligence (EDD) where required;</li>
+          <li>Complying with Anti-Money Laundering (AML) and Counter-Terrorism Financing (CTF) regulations;</li>
+          <li>Conducting sanctions screening and regulatory checks;</li>
+          <li>Meeting tax, reporting, and audit requirements;</li>
+          <li>Responding to lawful regulatory or governmental requests.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>C. Fraud Prevention, Security, and Risk Management</h3>
+        <p>We process information to detect, prevent, investigate, and respond to fraud, abuse, and security threats, including:</p>
+        <ul class="tl">
+          <li>Detecting suspicious, fraudulent, or unauthorized activity;</li>
+          <li>Preventing money laundering, terrorist financing, and financial crime;</li>
+          <li>Conducting fraud investigations and risk assessments;</li>
+          <li>Monitoring for account compromise or identity theft;</li>
+          <li>Detecting unusual transaction patterns or behavioral anomalies;</li>
+          <li>Maintaining cybersecurity protections and platform security;</li>
+          <li>Protecting users, systems, infrastructure, and business operations.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>D. Financial, Crypto, and Transaction Processing</h3>
+        <p>We use personal information to facilitate and process financial and digital asset transactions, including:</p>
+        <ul class="tl">
+          <li>Processing deposits, withdrawals, and payments;</li>
+          <li>Executing cryptocurrency transactions and wallet operations;</li>
+          <li>Managing transaction verification and settlement processes;</li>
+          <li>Monitoring transaction integrity and compliance;</li>
+          <li>Supporting billing, reconciliation, and financial reporting;</li>
+          <li>Processing telecom-related payments and service activations.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>E. Telecommunications and Digital Services</h3>
+        <p>Where applicable, we use information to provide telecommunications-related services, including:</p>
+        <ul class="tl">
+          <li>Airtime purchases;</li>
+          <li>Data bundle activation;</li>
+          <li>Utility bill payments;</li>
+          <li>Cable subscription services;</li>
+          <li>Service activation, validation, and delivery;</li>
+          <li>Support and troubleshooting of telecom services.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>F. Customer Support and Communication</h3>
+        <p>We use personal information to:</p>
+        <ul class="tl">
+          <li>Provide customer service and technical support;</li>
+          <li>Respond to enquiries, complaints, and requests;</li>
+          <li>Send service-related updates and notifications;</li>
+          <li>Communicate security alerts and account warnings;</li>
+          <li>Provide policy updates and important service information.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>G. Product Improvement and Business Operations</h3>
+        <p>We use data to improve our Services, including:</p>
+        <ul class="tl">
+          <li>Enhancing platform performance and usability;</li>
+          <li>Improving user experience and interface design;</li>
+          <li>Developing new features and services;</li>
+          <li>Conducting internal analytics and performance evaluations;</li>
+          <li>Performing system optimization and debugging;</li>
+          <li>Supporting infrastructure scalability and reliability.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>H. Audits, Compliance, and Legal Obligations</h3>
+        <p>We may process information to:</p>
+        <ul class="tl">
+          <li>Conduct internal and external audits;</li>
+          <li>Enforce contractual rights and obligations;</li>
+          <li>Comply with applicable laws and regulations;</li>
+          <li>Respond to legal claims, disputes, or litigation;</li>
+          <li>Maintain records for regulatory compliance;</li>
+          <li>Support investigations and compliance reviews.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>I. Security Notifications and Platform Integrity</h3>
+        <p>We use information to:</p>
+        <ul class="tl">
+          <li>Send security alerts and account notifications;</li>
+          <li>Detect and respond to system vulnerabilities;</li>
+          <li>Maintain platform integrity and prevent abuse;</li>
+          <li>Monitor access logs and system activity;</li>
+          <li>Protect against unauthorized access or malicious activity.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>J. Advanced Analytics, Monitoring, and Intelligence</h3>
+        <p>We may also use personal information for advanced operational and security purposes, including:</p>
+        <ul class="tl">
+          <li>Behavioral analytics and usage pattern analysis;</li>
+          <li>Transaction pattern and risk analysis;</li>
+          <li>Security intelligence monitoring and threat detection;</li>
+          <li>Fraud analytics and anomaly detection systems;</li>
+          <li>Platform performance optimization and diagnostics;</li>
+          <li>Compliance monitoring and regulatory reporting support;</li>
+          <li>Machine-assisted or automated risk scoring and investigations.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>K. General Principle of Lawful Use</h3>
+        <p>All processing of personal information is carried out on the basis of applicable lawful grounds, including contractual necessity, legal obligations, consent (where required), legitimate interests, and regulatory compliance obligations.</p>
+        <p>Themegatrader ensures that personal information is not used for purposes incompatible with those described in this Privacy Policy unless permitted or required by law.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         7. SHARING OF INFORMATION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s7">
+      <div class="sec-head">
+        <span class="sec-num">7</span>
+        <h2>SHARING OF INFORMATION</h2>
+      </div>
+
+      <p>Themegatrader is committed to protecting the confidentiality and security of personal information. We do not sell, rent, lease, or commercially trade personal data to third parties for profit or unrelated purposes.</p>
+
+      <p>However, in the normal course of operating the Themegatrader Platform and providing Services, we may share, disclose, or make available personal information to carefully selected and trusted third parties under strict contractual, confidentiality, security, and data protection obligations, and only where such sharing is necessary, lawful, proportionate, and consistent with applicable regulations, including the Nigeria Data Protection Act, 2023 (NDPA).</p>
+
+      <p>Personal information may be shared in the following circumstances:</p>
+
+      <div class="sub">
+        <h3>A. Service Providers and Processors</h3>
+        <p>Themegatrader may engage third-party service providers, processors, vendors, subcontractors, and infrastructure partners to support the operation, maintenance, security, and improvement of the Services.</p>
+        <p>Such service providers may process personal information strictly on behalf of Themegatrader and under binding contractual obligations that require confidentiality, data protection compliance, and appropriate security measures.</p>
+        <p>Service providers may include those assisting with:</p>
+        <ul class="tl">
+          <li>Payment processing and financial transaction support;</li>
+          <li>Cloud hosting, data storage, and infrastructure services;</li>
+          <li>Identity verification and Know Your Customer (KYC) services;</li>
+          <li>Anti-Money Laundering (AML), Counter-Terrorism Financing (CTF), and sanctions screening;</li>
+          <li>Telecommunications services, airtime, data, and billing systems;</li>
+          <li>Cybersecurity monitoring, fraud detection, and risk management services;</li>
+          <li>Customer support, communication systems, and service delivery tools;</li>
+          <li>Compliance, audit, and regulatory reporting functions;</li>
+          <li>Data analytics, performance measurement, and system optimization.</li>
+        </ul>
+        <p>These providers are only permitted to access, process, or retain personal information to the extent necessary to perform services on behalf of Themegatrader and are prohibited from using such data for independent, unrelated, or unauthorized purposes.</p>
+      </div>
+
+      <div class="sub">
+        <h3>B. Regulators, Law Enforcement, and Government Authorities</h3>
+        <p>Themegatrader may disclose personal information where required, permitted, or compelled by applicable law, regulation, legal process, or regulatory obligation.</p>
+        <p>Such disclosures may be made to:</p>
+        <ul class="tl">
+          <li>Courts of competent jurisdiction;</li>
+          <li>Regulatory authorities and supervisory bodies;</li>
+          <li>Law enforcement agencies and investigative authorities;</li>
+          <li>Financial intelligence units and anti-money laundering agencies;</li>
+          <li>Tax authorities or governmental agencies;</li>
+          <li>Cybersecurity or telecommunications regulators where applicable.</li>
+        </ul>
+        <p>Disclosures may occur in response to:</p>
+        <ul class="tl">
+          <li>Subpoenas, court orders, or binding legal requests;</li>
+          <li>Regulatory audits, investigations, or compliance checks;</li>
+          <li>AML/CTF obligations and suspicious activity reporting requirements;</li>
+          <li>Sanctions compliance obligations;</li>
+          <li>Fraud investigations or cybersecurity incidents;</li>
+          <li>Any other legally enforceable request or obligation.</li>
+        </ul>
+        <p>Themegatrader shall take commercially reasonable steps to ensure that any disclosure is limited to what is legally required and proportionate to the request, unless broader disclosure is mandated by law.</p>
+      </div>
+
+      <div class="sub">
+        <h3>C. Corporate Transactions and Business Transfers</h3>
+        <p>In the event of a corporate restructuring, business transaction, or organizational change, personal information may be disclosed or transferred as part of the transaction process, subject to applicable legal requirements and appropriate safeguards.</p>
+        <p>Such circumstances may include:</p>
+        <ul class="tl">
+          <li>Mergers or amalgamations;</li>
+          <li>Acquisitions or takeovers;</li>
+          <li>Corporate restructuring or reorganization;</li>
+          <li>Sale, transfer, or assignment of assets or business units;</li>
+          <li>Financing arrangements or investment transactions;</li>
+          <li>Insolvency, bankruptcy, or business continuity events.</li>
+        </ul>
+        <p>In such cases, Themegatrader will take reasonable steps to ensure that any successor entity or acquiring party continues to protect personal information in a manner consistent with this Privacy Policy and applicable data protection laws.</p>
+      </div>
+
+      <div class="sub">
+        <h3>D. Disclosure with User Consent</h3>
+        <p>Themegatrader may disclose or share personal information where a user has expressly provided valid, informed, and voluntary consent for such disclosure.</p>
+        <p>This may include cases where users:</p>
+        <ul class="tl">
+          <li>Request integration with third-party applications or services;</li>
+          <li>Authorize data sharing for specific features or transactions;</li>
+          <li>Consent to marketing communications or promotional partnerships;</li>
+          <li>Request third-party verification or service linkage.</li>
+        </ul>
+        <p>Users may withdraw consent at any time where applicable, subject to legal, contractual, or operational limitations.</p>
+      </div>
+
+      <div class="sub">
+        <h3>E. General Principles of Data Sharing</h3>
+        <p>In all cases of data sharing, Themegatrader applies the following principles:</p>
+        <ul class="tl">
+          <li>Data minimization (only necessary information is shared);</li>
+          <li>Purpose limitation (data is shared only for defined purposes);</li>
+          <li>Security safeguards (technical and organizational protections);</li>
+          <li>Confidentiality obligations (contractual restrictions on third parties);</li>
+          <li>Compliance with applicable laws and regulatory requirements;</li>
+          <li>Accountability and auditability of data processing activities.</li>
+        </ul>
+        <p>Themegatrader shall not disclose personal information in a manner that is inconsistent with applicable law or beyond what is reasonably necessary for legitimate operational, legal, regulatory, or business purposes.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         8. INTERNATIONAL DATA TRANSFERS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s8">
+      <div class="sec-head">
+        <span class="sec-num">8</span>
+        <h2>INTERNATIONAL DATA TRANSFERS</h2>
+      </div>
+
+      <p>Themegatrader may transfer, process, access, store, host, or otherwise make personal information available outside the Federal Republic of Nigeria where operationally necessary, commercially reasonable, legally required, or essential for the provision, maintenance, security, enhancement, or lawful operation of Themegatrader Services.</p>
+
+      <p>Because Themegatrader may rely on international infrastructure, third-party service providers, cloud hosting environments, payment systems, cybersecurity vendors, telecommunications partners, compliance providers, analytics systems, identity verification providers, fraud prevention technologies, blockchain monitoring services, and technical support functions, personal information may be processed across multiple jurisdictions.</p>
+
+      <p>Cross-border transfers may occur for purposes including:</p>
+      <ul class="tl">
+        <li>Provision and maintenance of Themegatrader Services;</li>
+        <li>Identity verification, KYC, AML/CTF, sanctions screening, and fraud prevention activities;</li>
+        <li>Payment processing, transaction monitoring, and account administration;</li>
+        <li>Customer support and service delivery;</li>
+        <li>Cybersecurity monitoring, incident response, and platform protection;</li>
+        <li>Data storage, hosting, infrastructure management, and disaster recovery;</li>
+        <li>Analytics, operational performance monitoring, and service optimization;</li>
+        <li>Regulatory compliance, legal reporting, audits, investigations, or lawful disclosure obligations;</li>
+        <li>Telecommunications, billing, digital asset, API, or platform functionality.</li>
+      </ul>
+
+      <p>Where cross-border transfers occur, Themegatrader may implement safeguards including:</p>
+      <ul class="tl">
+        <li>Data transfer agreements and contractual protections;</li>
+        <li>Confidentiality and processor obligations imposed on service providers;</li>
+        <li>Security safeguards designed to reduce unauthorized access risks;</li>
+        <li>Technical and organizational security controls;</li>
+        <li>Access control frameworks and role-based permissions;</li>
+        <li>Encryption, secure transmission methods, and secure storage protections;</li>
+        <li>NDPA-compliant transfer mechanisms and lawful transfer assessments;</li>
+        <li>Vendor due diligence and risk-based assessment procedures;</li>
+        <li>Monitoring, auditing, and compliance oversight measures;</li>
+        <li>Data minimization and restricted access principles.</li>
+      </ul>
+
+      <p>Themegatrader shall take commercially reasonable steps to ensure that international transfers are conducted in a manner consistent with:</p>
+      <ul class="tl">
+        <li>The Nigeria Data Protection Act, 2023 (NDPA);</li>
+        <li>Applicable cross-border transfer obligations;</li>
+        <li>Lawful processing requirements;</li>
+        <li>Security, confidentiality, and accountability principles;</li>
+        <li>Contractual and regulatory compliance obligations.</li>
+      </ul>
+
+      <p>Where required under applicable law, Themegatrader may assess:</p>
+      <ul class="tl">
+        <li>The adequacy of legal protections in receiving jurisdictions;</li>
+        <li>Risks associated with international transfers;</li>
+        <li>Security capabilities of receiving entities;</li>
+        <li>Technical and contractual safeguards necessary to reduce transfer-related risks.</li>
+      </ul>
+
+      <p>Users acknowledge and agree that by using Themegatrader Services, personal information may be transferred to, stored in, accessed from, or processed in countries outside Nigeria where Themegatrader or its service providers maintain operations, infrastructure, personnel, or technological systems.</p>
+
+      <p>Themegatrader reserves the right to transfer personal information where necessary to:</p>
+      <ul class="tl">
+        <li>Fulfill contractual obligations;</li>
+        <li>Provide requested Services;</li>
+        <li>Comply with legal and regulatory obligations;</li>
+        <li>Protect users, systems, or lawful business interests;</li>
+        <li>Detect, investigate, or prevent fraud, cybersecurity threats, financial crime, or unlawful conduct.</li>
+      </ul>
+
+      <p>Themegatrader shall make commercially reasonable efforts to maintain adequate privacy, security, confidentiality, and integrity protections consistent with applicable legal obligations and industry practices during international processing activities.</p>
+
+      <p>Where legally required, Themegatrader may provide additional information regarding international transfer safeguards upon valid request and subject to lawful limitations, confidentiality obligations, cybersecurity protections, or regulatory requirements.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         9. DATA RETENTION AND DELETION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s9">
+      <div class="sec-head">
+        <span class="sec-num">9</span>
+        <h2>DATA RETENTION AND DELETION</h2>
+      </div>
+
+      <p>Themegatrader retains personal information only for as long as reasonably necessary to fulfill the purposes for which it was collected, processed, or lawfully retained, including operational, legal, regulatory, contractual, compliance, security, fraud prevention, and dispute resolution purposes.</p>
+
+      <p>The duration for which personal information is retained depends on the type of information involved, the nature of the Services used, applicable legal requirements, regulatory expectations, business needs, risk considerations, and the necessity of retaining such information to protect users, maintain platform integrity, and satisfy lawful obligations.</p>
+
+      <p>Themegatrader applies retention practices designed to ensure that personal information is not retained indefinitely or longer than reasonably necessary, except where continued retention is legally justified or required.</p>
+
+      <p>Retention periods may be determined based on factors including, but not limited to:</p>
+      <ul class="tl">
+        <li>Applicable Anti-Money Laundering (AML) and Counter-Terrorism Financing (CTF) obligations;</li>
+        <li>Regulatory compliance requirements and supervisory obligations;</li>
+        <li>Tax, accounting, audit, and financial reporting obligations;</li>
+        <li>Legal, judicial, or governmental requests;</li>
+        <li>Ongoing compliance reviews or investigations;</li>
+        <li>Fraud detection, prevention, monitoring, and investigation requirements;</li>
+        <li>Cybersecurity monitoring, incident response, and security investigations;</li>
+        <li>Contractual obligations and dispute resolution requirements;</li>
+        <li>Litigation risks, anticipated legal claims, or evidentiary preservation requirements;</li>
+        <li>Business continuity, operational integrity, and system security needs;</li>
+        <li>User account management and transaction history requirements;</li>
+        <li>Telecommunications, payment, cryptocurrency, wallet, and financial transaction recordkeeping obligations.</li>
+      </ul>
+
+      <p>Themegatrader may retain personal information even after account closure, suspension, restriction, or termination where retention remains necessary or legally permitted for purposes including:</p>
+      <ul class="tl">
+        <li>Compliance with legal and regulatory obligations;</li>
+        <li>Fulfillment of AML/KYC, fraud prevention, and sanctions screening requirements;</li>
+        <li>Resolution of disputes, chargebacks, investigations, or complaints;</li>
+        <li>Enforcement of contractual obligations, legal rights, or remedies;</li>
+        <li>Security monitoring, incident response, and cyber threat investigations;</li>
+        <li>Compliance audits, financial reporting, and recordkeeping requirements;</li>
+        <li>Protection of Themegatrader, users, business partners, regulators, or lawful business interests.</li>
+      </ul>
+
+      <p>Where users request deletion, account closure, restriction, or withdrawal of consent, Themegatrader may continue to retain certain categories of personal information where legally necessary, proportionate, or permitted under applicable law.</p>
+
+      <p>Upon expiration of applicable retention periods, or where personal information is no longer reasonably required, Themegatrader may securely dispose of, de-identify, archive, or restrict access to such information using appropriate technical, administrative, and operational safeguards.</p>
+
+      <p>Data handling following retention may include:</p>
+      <ul class="tl">
+        <li>Secure deletion or destruction of personal information;</li>
+        <li>Anonymization so information can no longer identify an individual;</li>
+        <li>Pseudonymization to reduce identifiability risks;</li>
+        <li>Encryption and secure archival for lawful preservation purposes;</li>
+        <li>Restricted storage with limited access controls;</li>
+        <li>Aggregation for statistical, analytical, cybersecurity, fraud prevention, or operational purposes where legally permissible.</li>
+      </ul>
+
+      <p>Themegatrader maintains commercially reasonable safeguards to protect retained personal information against unauthorized access, misuse, unlawful disclosure, destruction, alteration, or compromise throughout the applicable retention lifecycle.</p>
+
+      <p>Themegatrader may periodically review, revise, or update retention schedules, storage practices, and disposal procedures to reflect:</p>
+      <ul class="tl">
+        <li>Legal or regulatory developments;</li>
+        <li>Security improvements;</li>
+        <li>Operational changes;</li>
+        <li>Technological advancements;</li>
+        <li>Compliance requirements;</li>
+        <li>Business and risk management considerations.</li>
+      </ul>
+
+      <p>Where required by law, Themegatrader shall take commercially reasonable measures to ensure that personal information is securely deleted, anonymized, archived, or otherwise processed in accordance with applicable legal, regulatory, and operational requirements.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         10. YOUR RIGHTS AS A DATA SUBJECT
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s10">
+      <div class="sec-head">
+        <span class="sec-num">10</span>
+        <h2>YOUR RIGHTS AS A DATA SUBJECT</h2>
+      </div>
+
+      <p>Themegatrader respects the privacy and data protection rights of users and is committed to ensuring that personal information is processed lawfully, fairly, transparently, and in accordance with applicable legal and regulatory obligations, including the Nigeria Data Protection Act, 2023 (NDPA) and other applicable privacy requirements.</p>
+
+      <p>Subject to applicable law, regulatory obligations, identity verification requirements, contractual commitments, fraud prevention measures, and lawful operational limitations, users may exercise certain rights concerning their personal information.</p>
+
+      <p>These rights may include, but are not limited to:</p>
+
+      <div class="sub">
+        <h3>A. Right of Access</h3>
+        <p>Users may request confirmation regarding whether Themegatrader processes their personal information and, where applicable, request access to certain categories of personal information held by Themegatrader.</p>
+        <p>Subject to lawful limitations, users may request information regarding:</p>
+        <ul class="tl">
+          <li>Categories of personal information collected;</li>
+          <li>Purposes of processing;</li>
+          <li>Sources of information;</li>
+          <li>Categories of recipients with whom data may be shared;</li>
+          <li>Retention periods where applicable;</li>
+          <li>Applicable safeguards relating to data transfers.</li>
+        </ul>
+        <p>Themegatrader reserves the right to verify identity before granting access to prevent unauthorized disclosure, fraud, or account compromise.</p>
+      </div>
+
+      <div class="sub">
+        <h3>B. Right to Correction or Rectification</h3>
+        <p>Users may request correction, amendment, or updating of inaccurate, incomplete, outdated, misleading, or incorrect personal information held by Themegatrader.</p>
+        <p>Themegatrader may request supporting documentation where reasonably necessary to validate requested corrections, including identity verification or updated records.</p>
+      </div>
+
+      <div class="sub">
+        <h3>C. Right to Deletion or Erasure</h3>
+        <p>Subject to applicable legal, contractual, regulatory, fraud prevention, compliance, tax, AML/CTF, cybersecurity, dispute resolution, audit, and retention obligations, users may request deletion or erasure of personal information.</p>
+        <p>However, Themegatrader may retain certain information where reasonably necessary to:</p>
+        <ul class="tl">
+          <li>Comply with legal obligations;</li>
+          <li>Fulfill AML/KYC and fraud prevention requirements;</li>
+          <li>Detect, investigate, or prevent unlawful activity;</li>
+          <li>Resolve disputes or enforce legal claims;</li>
+          <li>Maintain security, audit, and compliance records;</li>
+          <li>Protect users, systems, or lawful business interests.</li>
+        </ul>
+        <p>Where deletion is permitted, Themegatrader may securely erase, anonymize, pseudonymize, or restrict access to information as appropriate.</p>
+      </div>
+
+      <div class="sub">
+        <h3>D. Right to Restrict Processing</h3>
+        <p>Users may request restriction or temporary suspension of certain processing activities where:</p>
+        <ul class="tl">
+          <li>Accuracy of information is disputed;</li>
+          <li>Processing is contested;</li>
+          <li>Objections are under review;</li>
+          <li>Legal requirements permit such restriction.</li>
+        </ul>
+        <p>Themegatrader reserves the right to continue processing where required for compliance, security, fraud prevention, dispute resolution, contractual performance, or lawful obligations.</p>
+      </div>
+
+      <div class="sub">
+        <h3>E. Right to Object</h3>
+        <p>Where legally applicable, users may object to certain forms of personal data processing, including:</p>
+        <ul class="tl">
+          <li>Direct marketing communications;</li>
+          <li>Certain analytics or profiling activities;</li>
+          <li>Processing based on legitimate interests, where applicable.</li>
+        </ul>
+        <p>Themegatrader may continue processing where compelling legitimate grounds, legal obligations, contractual necessity, fraud prevention concerns, or regulatory requirements override such objections.</p>
+      </div>
+
+      <div class="sub">
+        <h3>F. Right to Data Portability</h3>
+        <p>Where legally applicable and technically feasible, users may request transfer or provision of certain personal information in a structured, commonly used, and machine-readable format.</p>
+        <p>Themegatrader reserves the right to limit portability requests where:</p>
+        <ul class="tl">
+          <li>Requests are technically impractical;</li>
+          <li>Security concerns arise;</li>
+          <li>Legal obligations restrict disclosure;</li>
+          <li>Third-party rights may be affected.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>G. Right to Withdraw Consent</h3>
+        <p>Where processing is based on consent, users may withdraw consent at any time.</p>
+        <p>Withdrawal of consent shall not affect the lawfulness of processing conducted prior to withdrawal.</p>
+        <p>Users acknowledge that withdrawal of consent may affect:</p>
+        <ul class="tl">
+          <li>Access to certain features or functionality;</li>
+          <li>Platform personalization;</li>
+          <li>Marketing communications;</li>
+          <li>Optional identity verification features;</li>
+          <li>Service accessibility where processing is essential.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>H. Right to Complain to Supervisory Authorities</h3>
+        <p>Users may lodge complaints with relevant supervisory, regulatory, or privacy authorities where they believe their privacy or data protection rights have been violated.</p>
+        <p>Where applicable, users may contact the Nigeria Data Protection Commission (NDPC) or any other competent authority having jurisdiction.</p>
+      </div>
+
+      <div class="sub">
+        <h3>I. Rights Relating to Automated Decision-Making</h3>
+        <p>Where applicable under law, users may request clarification or raise concerns relating to certain automated processing decisions that significantly affect them, subject to lawful security, fraud prevention, AML/CTF, operational, or regulatory limitations.</p>
+      </div>
+
+      <div class="sub">
+        <h3>Exercising Your Rights</h3>
+        <p>Users may submit requests relating to personal information, privacy concerns, complaints, or the exercise of legal rights by contacting:</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="cc-lbl">Compliance &amp; Data Protection</div>
+            <div class="cc-val">compliance@themegatrader.com</div>
+            <div style="margin-top:8px;"><a href="mailto:compliance@themegatrader.com">compliance@themegatrader.com</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-lbl">General Contact</div>
+            <div class="cc-val">info@themegatrader.com</div>
+            <div style="margin-top:8px;"><a href="mailto:info@themegatrader.com">info@themegatrader.com</a></div>
+          </div>
+        </div>
+        <p style="margin-top:18px;">Themegatrader may request identity verification, supporting documentation, account authentication, or additional information before processing any request in order to prevent unauthorized disclosure, protect account security, prevent fraud or misuse, and verify lawful entitlement to requested information.</p>
+        <p>Themegatrader shall make commercially reasonable efforts to respond to valid requests within legally prescribed timeframes or, where no timeframe applies, within a reasonable period.</p>
+        <p>Themegatrader reserves the right to refuse, restrict, defer, or partially fulfill requests where permitted by law, including where requests are manifestly unfounded or excessive, repetitive or abusive, contrary to legal obligations, likely to interfere with fraud prevention, security, investigations, litigation, or regulatory compliance, or infringing on the rights of other users or third parties.</p>
+        <p>Nothing in this section limits rights granted to users under applicable privacy, consumer protection, financial, or regulatory laws.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         11. COOKIES AND TRACKING TECHNOLOGIES
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s11">
+      <div class="sec-head">
+        <span class="sec-num">11</span>
+        <h2>COOKIES AND TRACKING TECHNOLOGIES</h2>
+      </div>
+
+      <p>Themegatrader uses cookies and similar technologies to improve user experience, maintain platform functionality, strengthen cybersecurity protections, personalize interactions, analyze system performance, support fraud prevention measures, ensure regulatory compliance, and optimize the delivery of Services.</p>
+
+      <p>Cookies are small text files or similar digital identifiers stored on a user's device, browser, or application environment that enable websites, mobile applications, APIs, and digital services to recognize users, authenticate sessions, remember preferences, improve usability, support analytics, and enhance security.</p>
+
+      <p>Themegatrader may also use related technologies including:</p>
+      <ul class="tl">
+        <li>Cookies (session and persistent cookies);</li>
+        <li>Web beacons;</li>
+        <li>Pixels and tracking tags;</li>
+        <li>Local storage technologies;</li>
+        <li>Device identifiers;</li>
+        <li>SDKs (software development kits);</li>
+        <li>Log files;</li>
+        <li>Session tracking technologies;</li>
+        <li>Analytics tools;</li>
+        <li>Device fingerprinting technologies where legally permissible.</li>
+      </ul>
+
+      <p>By accessing or using Themegatrader Services, users acknowledge and consent to the use of cookies and similar tracking technologies in accordance with this Privacy Policy, except where consent is not legally required or where users validly refuse or withdraw consent in jurisdictions requiring such rights.</p>
+
+      <div class="sub">
+        <h3>11.1 Types of Cookies and Tracking Technologies We Use</h3>
+
+        <h4>A. Strictly Necessary Cookies</h4>
+        <p>Strictly necessary cookies are essential for the operation, accessibility, reliability, and security of the Themegatrader Platform. These cookies cannot ordinarily be disabled without materially affecting the functionality, performance, or security of the Services.</p>
+        <p>Such cookies may support:</p>
+        <ul class="tl">
+          <li>User authentication and secure login processes;</li>
+          <li>Session management and account continuity;</li>
+          <li>Identity verification processes;</li>
+          <li>Fraud detection and account protection;</li>
+          <li>Security verification and abuse prevention;</li>
+          <li>Platform stability and operational functionality;</li>
+          <li>Payment processing and transaction security;</li>
+          <li>Wallet functionality and service access;</li>
+          <li>Network management and cybersecurity protections;</li>
+          <li>User account access and platform administration.</li>
+        </ul>
+        <p>Themegatrader may process strictly necessary cookies without requiring consent where legally permitted because they are essential for delivering Services requested by users.</p>
+
+        <h4>B. Performance and Analytics Cookies</h4>
+        <p>Themegatrader may use performance, measurement, and analytics cookies to understand how users interact with the Platform and improve overall performance, reliability, usability, and security.</p>
+        <p>These cookies may collect information concerning:</p>
+        <ul class="tl">
+          <li>Session activity and usage duration;</li>
+          <li>Navigation behavior and interaction pathways;</li>
+          <li>Popular platform features and user engagement;</li>
+          <li>System performance and application responsiveness;</li>
+          <li>Error reports, crash logs, and troubleshooting information;</li>
+          <li>Service quality indicators and performance metrics;</li>
+          <li>Device, browser, and operating environment characteristics;</li>
+          <li>General traffic trends and aggregated user behavior patterns.</li>
+        </ul>
+        <p>Where legally required, analytics technologies may be implemented subject to user consent.</p>
+
+        <h4>C. Functional Cookies</h4>
+        <p>Functional cookies enable enhanced usability, personalization, and customized platform experiences.</p>
+        <p>These cookies may support:</p>
+        <ul class="tl">
+          <li>Language preferences;</li>
+          <li>Region or country selection;</li>
+          <li>Account settings and display preferences;</li>
+          <li>User interface customization;</li>
+          <li>Accessibility preferences;</li>
+          <li>Saved login experiences and remembered credentials where permitted;</li>
+          <li>Session continuity across devices or browser sessions;</li>
+          <li>Feature personalization and service optimization.</li>
+        </ul>
+        <p>Certain functional settings may be unavailable if users disable these technologies.</p>
+
+        <h4>D. Marketing, Communications, and Advertising Cookies</h4>
+        <p>Where legally permissible and subject to applicable consent requirements, Themegatrader may use cookies or related technologies for communications, marketing effectiveness, and promotional optimization purposes.</p>
+        <p>These technologies may support:</p>
+        <ul class="tl">
+          <li>Promotional campaigns and communications;</li>
+          <li>Measurement of marketing effectiveness;</li>
+          <li>User engagement analysis;</li>
+          <li>Personalized notifications and communications;</li>
+          <li>Advertising performance measurement;</li>
+          <li>Service recommendations and feature awareness;</li>
+          <li>User preference analysis for permitted marketing purposes.</li>
+        </ul>
+        <p>Themegatrader does not guarantee that marketing-related technologies will always involve individualized targeting and reserves the right to modify communications practices in accordance with applicable legal obligations. Where consent is required by law, users may refuse or withdraw consent for certain marketing technologies.</p>
+      </div>
+
+      <div class="sub">
+        <h3>11.2 Third-Party Analytics, Security, and Service Providers</h3>
+        <p>Themegatrader may engage trusted third-party vendors, processors, technology partners, analytics providers, infrastructure providers, cybersecurity providers, compliance service providers, or telecommunications partners to support platform operations and improve service functionality.</p>
+        <p>Third-party technologies may assist with:</p>
+        <ul class="tl">
+          <li>Analytics and performance monitoring;</li>
+          <li>Security monitoring and fraud prevention;</li>
+          <li>User behavior analysis and usage reporting;</li>
+          <li>Technical troubleshooting and diagnostics;</li>
+          <li>Authentication support and risk management;</li>
+          <li>Cybersecurity monitoring and anomaly detection;</li>
+          <li>Infrastructure optimization and performance enhancement.</li>
+        </ul>
+        <p>Where third-party providers process cookie-related or technical information on Themegatrader's behalf, such providers may be contractually required to implement reasonable confidentiality, privacy, and security obligations consistent with applicable laws.</p>
+        <p>Certain third-party providers may independently process information in accordance with their own privacy notices, contractual arrangements, and legal obligations. Themegatrader is not responsible for privacy practices independently operated by unrelated third-party platforms or services.</p>
+      </div>
+
+      <div class="sub">
+        <h3>11.3 Cookie Management and User Controls</h3>
+        <p>Users may control, disable, restrict, delete, or manage cookies and similar technologies through:</p>
+        <ul class="tl">
+          <li>Browser settings;</li>
+          <li>Mobile device settings;</li>
+          <li>Application permissions;</li>
+          <li>Cookie preference tools where available;</li>
+          <li>Privacy settings within supported systems.</li>
+        </ul>
+        <p>Users may choose to block certain categories of cookies, restrict tracking technologies, or withdraw consent where applicable.</p>
+        <p>However, restricting or disabling cookies may affect:</p>
+        <ul class="tl">
+          <li>Authentication functionality;</li>
+          <li>Account access and secure login experiences;</li>
+          <li>Service accessibility and platform reliability;</li>
+          <li>Personalization and saved settings;</li>
+          <li>Transaction processing functionality;</li>
+          <li>Fraud prevention systems;</li>
+          <li>Performance optimization and user experience;</li>
+          <li>Availability of certain features, services, or account functionality.</li>
+        </ul>
+        <p>Certain essential cookies and security-related technologies may remain operational where necessary to protect the Themegatrader Platform, comply with legal obligations, or deliver requested Services.</p>
+        <p>Themegatrader may periodically revise cookie settings, tracking technologies, and consent practices to align with evolving legal obligations, cybersecurity needs, business requirements, operational improvements, and regulatory expectations. Users are encouraged to periodically review this Privacy Policy for updates relating to cookies, tracking technologies, analytics practices, and user privacy controls.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         12. CHILDREN'S PRIVACY
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s12">
+      <div class="sec-head">
+        <span class="sec-num">12</span>
+        <h2>CHILDREN'S PRIVACY</h2>
+      </div>
+
+      <p>Themegatrader is committed to protecting the privacy, safety, and personal information of children and minors. Themegatrader Services are strictly intended for individuals who are 18 years of age or older or who otherwise possess the legal capacity to enter into binding agreements under applicable law.</p>
+
+      <p>Due to the nature of Themegatrader's Services, including cryptocurrency-related services, financial transactions, telecommunications services, payment functionality, identity verification obligations, compliance monitoring, and regulatory requirements, Themegatrader does not knowingly permit minors to create accounts, access certain services, conduct transactions, or provide personal information without lawful authorization where applicable.</p>
+
+      <p>Themegatrader does not knowingly collect, process, retain, solicit, store, or otherwise use personal information belonging to individuals below the applicable legal age threshold.</p>
+
+      <p>Users represent and warrant that:</p>
+      <ul class="tl">
+        <li>They are at least 18 years of age or otherwise legally authorized to use the Services under applicable law;</li>
+        <li>Information submitted to Themegatrader is accurate and truthful;</li>
+        <li>They possess the legal authority and contractual capacity required to access or use Themegatrader Services.</li>
+      </ul>
+
+      <p>Where Themegatrader becomes aware, suspects, or reasonably determines that personal information has been collected from an individual below the legal age threshold or that a user has misrepresented eligibility requirements, Themegatrader reserves the right to take appropriate action, including:</p>
+      <ul class="tl">
+        <li>Suspending, restricting, or terminating the associated account where necessary;</li>
+        <li>Conducting internal investigations and verification procedures;</li>
+        <li>Restricting access to certain services, features, or functionality;</li>
+        <li>Requesting additional verification or supporting documentation;</li>
+        <li>Removing, anonymizing, or securely deleting personal information where legally permissible;</li>
+        <li>Blocking further registration attempts or access where appropriate;</li>
+        <li>Taking reasonable steps to prevent future unauthorized collection or processing.</li>
+      </ul>
+
+      <p>Themegatrader may implement age verification, identity verification, and eligibility assessment measures in order to ensure compliance with applicable laws, contractual requirements, fraud prevention standards, and regulatory obligations.</p>
+
+      <p>Such verification measures may include requests for:</p>
+      <ul class="tl">
+        <li>Government-issued identification documents;</li>
+        <li>Passport, national identification card, driver's license, or equivalent identity records;</li>
+        <li>Date of birth verification;</li>
+        <li>Biometric or identity verification procedures where legally permissible;</li>
+        <li>Additional Know Your Customer (KYC) documentation;</li>
+        <li>Proof of age or legal capacity.</li>
+      </ul>
+
+      <p>Themegatrader reserves the right to refuse account registration, suspend transactions, limit platform access, or terminate services where age verification requirements are not satisfied or where inaccurate, false, misleading, or incomplete information is provided.</p>
+
+      <p>Where applicable law permits or requires processing involving individuals below the legal age threshold, Themegatrader may require valid, verifiable, and legally sufficient consent from a parent, guardian, or authorized legal representative prior to collecting, processing, or retaining any relevant information.</p>
+
+      <p>Where parental or guardian consent is required:</p>
+      <ul class="tl">
+        <li>Such consent must be obtained before relevant processing activities occur;</li>
+        <li>Themegatrader may request documentation reasonably necessary to verify consent or legal authority;</li>
+        <li>Themegatrader reserves the right to suspend or discontinue processing where consent cannot be verified.</li>
+      </ul>
+
+      <p>Parents, guardians, or legal representatives who believe that a minor may have provided personal information to Themegatrader in violation of this Privacy Policy may contact Themegatrader to request investigation, correction, restriction, or deletion of such information where legally permissible.</p>
+
+      <div class="sub">
+        <h3>Contact for Children's Privacy Concerns</h3>
+        <p>For concerns relating to minors, age verification, parental consent, or children's privacy matters, users may contact:</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="cc-lbl">Compliance &amp; Privacy Contact</div>
+            <div class="cc-val">compliance@themegatrader.com</div>
+            <div style="margin-top:8px;"><a href="mailto:compliance@themegatrader.com">compliance@themegatrader.com</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-lbl">General Contact</div>
+            <div class="cc-val">info@themegatrader.com</div>
+            <div style="margin-top:8px;"><a href="mailto:info@themegatrader.com">info@themegatrader.com</a></div>
+          </div>
+        </div>
+        <p style="margin-top:18px;">Themegatrader shall take commercially reasonable measures to investigate reported concerns and respond within a reasonable timeframe, subject to legal, operational, regulatory, and verification requirements.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         13. SECURITY MEASURES
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s13">
+      <div class="sec-head">
+        <span class="sec-num">13</span>
+        <h2>SECURITY MEASURES</h2>
+      </div>
+
+      <p>Themegatrader recognizes the importance of maintaining the confidentiality, integrity, availability, and resilience of personal information and implements administrative, technical, operational, organizational, and physical safeguards designed to protect personal information against unauthorized access, unlawful processing, accidental loss, misuse, destruction, alteration, disclosure, theft, compromise, cyber threats, or other security-related incidents.</p>
+
+      <p>Themegatrader continuously evaluates, reviews, and enhances its security posture in order to maintain a secure operating environment, protect user information, support regulatory compliance obligations, and reduce risks associated with cybersecurity threats, fraud, system vulnerabilities, unauthorized access, malicious activity, operational disruption, and financial crime.</p>
+
+      <div class="sub">
+        <h3>13.1 Technical Safeguards</h3>
+        <p>Themegatrader may implement technical and cybersecurity measures including:</p>
+        <ul class="tl">
+          <li>Encryption of sensitive information during transmission and storage ("in transit" and "at rest");</li>
+          <li>Secure communication protocols including Secure Socket Layer (SSL) and Transport Layer Security (TLS) protections;</li>
+          <li>Firewalls, perimeter defenses, and intrusion prevention systems;</li>
+          <li>Threat detection, anomaly detection, and cybersecurity monitoring systems;</li>
+          <li>Endpoint protection and malware prevention tools;</li>
+          <li>Secure API architecture and authentication frameworks;</li>
+          <li>Device, network, and session monitoring mechanisms;</li>
+          <li>Access authentication controls and identity verification systems;</li>
+          <li>Password protection requirements and authentication safeguards;</li>
+          <li>Multi-factor authentication (MFA), two-factor authentication (2FA), or additional authentication measures where applicable;</li>
+          <li>Logging, monitoring, and audit trail systems for security analysis and incident response;</li>
+          <li>Backup, redundancy, and recovery systems intended to support operational continuity;</li>
+          <li>Secure software development practices, updates, and vulnerability remediation processes.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>13.2 Access Management and Data Access Controls</h3>
+        <p>Themegatrader applies internal access governance procedures intended to restrict access to personal information to authorized personnel with legitimate business, compliance, operational, or legal requirements.</p>
+        <p>Security access practices may include:</p>
+        <ul class="tl">
+          <li>Role-Based Access Controls (RBAC);</li>
+          <li>Least privilege access principles;</li>
+          <li>Segregation of duties and restricted permissions;</li>
+          <li>Need-to-know access management procedures;</li>
+          <li>Authentication and authorization controls;</li>
+          <li>Controlled access to internal systems, records, databases, and sensitive information;</li>
+          <li>Monitoring of access activities and internal system usage;</li>
+          <li>Access revocation procedures where employment, contractor relationships, or operational requirements change.</li>
+        </ul>
+        <p>Only personnel with authorized responsibilities and legitimate operational, compliance, or legal needs may access personal information, and such access may be limited to what is reasonably necessary to perform assigned functions.</p>
+      </div>
+
+      <div class="sub">
+        <h3>13.3 Monitoring, Risk Management, and Security Testing</h3>
+        <p>Themegatrader conducts ongoing monitoring, risk management, and cybersecurity assessment activities designed to identify vulnerabilities, reduce threats, strengthen resilience, and improve overall security effectiveness.</p>
+        <p>Such measures may include:</p>
+        <ul class="tl">
+          <li>Vulnerability assessments and remediation programs;</li>
+          <li>Internal and external security audits;</li>
+          <li>Penetration testing and cybersecurity simulation exercises;</li>
+          <li>Threat intelligence monitoring and cyber risk analysis;</li>
+          <li>Incident detection, alerting, and response procedures;</li>
+          <li>Security event monitoring and logging;</li>
+          <li>Compliance and control assessments;</li>
+          <li>Business continuity and disaster recovery planning;</li>
+          <li>Risk assessments relating to technology, fraud, operational resilience, and privacy protection;</li>
+          <li>Periodic review of internal controls, infrastructure, and security processes.</li>
+        </ul>
+        <p>Themegatrader may engage qualified third-party cybersecurity professionals, auditors, compliance providers, or infrastructure vendors to support monitoring, testing, and security improvement initiatives.</p>
+      </div>
+
+      <div class="sub">
+        <h3>13.4 Employee Awareness, Training, and Confidentiality</h3>
+        <p>Employees, contractors, consultants, service providers, and authorized personnel who may access personal information may receive periodic training or awareness programs concerning:</p>
+        <ul class="tl">
+          <li>Data protection obligations;</li>
+          <li>Cybersecurity awareness and threat prevention;</li>
+          <li>Confidentiality obligations and secure handling of information;</li>
+          <li>Incident reporting requirements and escalation procedures;</li>
+          <li>Fraud prevention, anti-phishing awareness, and social engineering risks;</li>
+          <li>Information governance and internal access controls;</li>
+          <li>Compliance obligations under applicable law and company policy.</li>
+        </ul>
+        <p>Personnel handling personal information may be subject to confidentiality agreements, internal privacy and cybersecurity policies, restricted access requirements, and security obligations and disciplinary procedures for misuse or unauthorized disclosure.</p>
+      </div>
+
+      <div class="sub">
+        <h3>Security Limitations and User Acknowledgment</h3>
+        <p>While Themegatrader implements commercially reasonable safeguards, security controls, monitoring systems, and preventative measures intended to protect personal information, no technological system, digital platform, blockchain network, telecommunications infrastructure, software environment, or internet-based service can be guaranteed to be entirely secure, uninterrupted, or immune from risks.</p>
+        <p>Users acknowledge and agree that:</p>
+        <ul class="tl">
+          <li>Internet-based services inherently involve cybersecurity risks;</li>
+          <li>Unauthorized access, technical failures, cyberattacks, or security incidents may occur despite reasonable precautions;</li>
+          <li>Users share responsibility for maintaining the security of their credentials, passwords, devices, authentication methods, and account access;</li>
+          <li>Themegatrader cannot guarantee absolute protection against all cybersecurity threats, fraud attempts, service disruptions, malicious activity, or unforeseen technical vulnerabilities.</li>
+        </ul>
+        <p>Users are encouraged to adopt reasonable personal cybersecurity practices, including maintaining strong passwords, enabling available security features, protecting authentication credentials, monitoring account activity, and promptly reporting suspicious activity to Themegatrader.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         14. DATA BREACH NOTIFICATION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s14">
+      <div class="sec-head">
+        <span class="sec-num">14</span>
+        <h2>DATA BREACH NOTIFICATION</h2>
+      </div>
+
+      <p>Themegatrader recognizes the importance of safeguarding personal information and maintaining a secure digital environment. Accordingly, Themegatrader maintains documented policies, incident response procedures, cybersecurity controls, breach management protocols, and escalation frameworks designed to identify, investigate, contain, remediate, and report personal data breaches and cybersecurity incidents in a timely, lawful, and effective manner.</p>
+
+      <p>For the purpose of this Privacy Policy, a personal data breach may include any accidental, unlawful, unauthorized, or malicious event leading to the compromise of personal information, including unauthorized:</p>
+      <ul class="tl">
+        <li>Access to personal information;</li>
+        <li>Disclosure of confidential or personal data;</li>
+        <li>Alteration, corruption, manipulation, or modification of records;</li>
+        <li>Destruction or irreversible damage to personal information;</li>
+        <li>Loss, theft, exposure, or accidental disclosure of personal data;</li>
+        <li>Unavailability of systems affecting access to personal information;</li>
+        <li>Unauthorized account compromise or cybersecurity intrusion.</li>
+      </ul>
+
+      <div class="sub">
+        <h3>Incident Response and Investigation</h3>
+        <p>Upon becoming aware of a suspected, attempted, or confirmed personal data breach or cybersecurity incident, Themegatrader may immediately take steps to assess, contain, investigate, and mitigate potential harm.</p>
+        <p>Such actions may include:</p>
+        <ul class="tl">
+          <li>Investigating the nature, scope, cause, and severity of the incident;</li>
+          <li>Activating internal incident response and escalation procedures;</li>
+          <li>Containing, isolating, restricting, or mitigating affected systems or services;</li>
+          <li>Assessing actual or potential risks to affected individuals, systems, operations, or data;</li>
+          <li>Preserving forensic evidence and maintaining incident records;</li>
+          <li>Conducting internal cybersecurity, technical, compliance, and operational reviews;</li>
+          <li>Suspending, restricting, or monitoring affected systems where reasonably necessary;</li>
+          <li>Implementing corrective, preventive, and remediation measures;</li>
+          <li>Restoring system integrity, data availability, or operational functionality;</li>
+          <li>Strengthening technical, procedural, and organizational safeguards to reduce recurrence risks;</li>
+          <li>Coordinating with relevant service providers, legal advisers, regulators, compliance personnel, cybersecurity experts, or law enforcement authorities where appropriate.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>A. Notification to Regulatory Authorities</h3>
+        <p>Where required under applicable law, including the Nigeria Data Protection Act, 2023 (NDPA), and where a personal data breach is likely to result in a risk to the rights and freedoms of affected individuals, Themegatrader may notify the relevant competent authority or authorities within legally prescribed timelines.</p>
+        <p>Such notifications may be made to:</p>
+        <ul class="tl">
+          <li>The Nigeria Data Protection Commission (NDPC);</li>
+          <li>Financial regulators or supervisory authorities;</li>
+          <li>Anti-money laundering or financial intelligence agencies;</li>
+          <li>Law enforcement authorities;</li>
+          <li>Cybersecurity, telecommunications, or other competent governmental agencies where legally required.</li>
+        </ul>
+        <p>Where legally required, regulatory notifications may include the nature and scope of the breach, categories and approximate number of affected individuals, categories of personal information affected, potential risks and likely consequences, mitigation and remediation measures undertaken, contact details for relevant compliance or data protection personnel, and measures proposed to prevent recurrence.</p>
+        <p>Themegatrader shall make commercially reasonable efforts to comply with legally prescribed reporting obligations and timelines applicable to breach notification requirements.</p>
+      </div>
+
+      <div class="sub">
+        <h3>B. Notification to Affected Individuals</h3>
+        <p>Where a breach is likely to result in a high risk to the rights, freedoms, privacy, financial interests, or security of affected individuals, Themegatrader may notify impacted users without undue delay and, where reasonably practicable, provide information relating to:</p>
+        <ul class="tl">
+          <li>The nature and circumstances of the incident;</li>
+          <li>Categories or types of information affected;</li>
+          <li>Date or estimated period of compromise where known;</li>
+          <li>Likely risks, impacts, or potential consequences;</li>
+          <li>Recommended protective measures users may take;</li>
+          <li>Actions implemented by Themegatrader to contain and remediate the incident;</li>
+          <li>Contact information for additional support or inquiries.</li>
+        </ul>
+        <p>Notifications may be provided through email communications, in-platform alerts, website announcements, SMS or push notifications where appropriate, direct account notifications, or other reasonable communication methods.</p>
+        <p>In certain circumstances permitted by law, Themegatrader may delay notification where immediate disclosure would interfere with law enforcement investigations, compromise cybersecurity containment measures, increase security vulnerabilities, prejudice fraud prevention or regulatory investigations, or conflict with lawful governmental instructions.</p>
+      </div>
+
+      <div class="sub">
+        <h3>Incident Documentation and Recordkeeping</h3>
+        <p>Themegatrader maintains internal incident registers, breach documentation, audit records, remediation logs, and compliance reporting frameworks in accordance with applicable legal, operational, cybersecurity, and regulatory obligations.</p>
+        <p>Such records may include:</p>
+        <ul class="tl">
+          <li>Incident timelines;</li>
+          <li>Investigation findings;</li>
+          <li>Remediation actions;</li>
+          <li>Risk assessments;</li>
+          <li>Regulatory notifications;</li>
+          <li>Internal escalation documentation;</li>
+          <li>Lessons learned and preventive measures.</li>
+        </ul>
+        <p>Themegatrader continuously reviews and improves its breach detection, incident response, cybersecurity resilience, and recovery capabilities to strengthen data protection standards and minimize future risks.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         15. AUTOMATED DECISION-MAKING AND FRAUD MONITORING
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s15">
+      <div class="sec-head">
+        <span class="sec-num">15</span>
+        <h2>AUTOMATED DECISION-MAKING AND FRAUD MONITORING</h2>
+      </div>
+
+      <p>To protect users, maintain platform integrity, satisfy regulatory obligations, and prevent financial crime, Themegatrader may use automated systems, data analytics, machine learning technologies, blockchain intelligence tools, cybersecurity monitoring systems, behavioral analytics, transaction monitoring frameworks, and risk assessment technologies to identify, assess, prevent, investigate, and respond to suspicious or unlawful activity.</p>
+
+      <p>Themegatrader may use automated or semi-automated systems to:</p>
+      <ul class="tl">
+        <li>Detect suspicious, unusual, high-risk, or abnormal activity patterns;</li>
+        <li>Prevent fraud, scams, account compromise, unauthorized access, or abuse of Services;</li>
+        <li>Identify unusual transactions, behavioral anomalies, or account inconsistencies;</li>
+        <li>Detect money laundering, terrorist financing, sanctions evasion, fraud indicators, or other financial crime risks;</li>
+        <li>Conduct transaction monitoring for AML/CTF compliance purposes;</li>
+        <li>Screen wallet addresses, blockchain transactions, counterparties, or digital assets against risk indicators and sanctions-related databases where applicable;</li>
+        <li>Prevent abuse of telecommunications, payment, wallet, API, and cryptocurrency-related Services;</li>
+        <li>Enhance platform security, cybersecurity resilience, and threat intelligence monitoring;</li>
+        <li>Detect identity theft, synthetic identities, impersonation attempts, suspicious authentication behavior, or unauthorized account activity;</li>
+        <li>Assess account activity against predefined risk scoring models;</li>
+        <li>Monitor login behavior, transaction velocity, device fingerprinting, geolocation inconsistencies, and unusual usage patterns;</li>
+        <li>Reduce financial losses, system abuse, cyber threats, malicious activity, or regulatory exposure.</li>
+      </ul>
+
+      <p>As part of fraud prevention and compliance monitoring, automated systems may:</p>
+      <ul class="tl">
+        <li>Flag suspicious or high-risk activity for further review;</li>
+        <li>Temporarily delay, suspend, decline, reverse, restrict, or place holds on transactions;</li>
+        <li>Trigger enhanced due diligence, identity verification, or compliance checks;</li>
+        <li>Restrict account functionality pending review;</li>
+        <li>Require additional documentation or verification;</li>
+        <li>Generate internal alerts for manual investigation by compliance, fraud prevention, or security personnel.</li>
+      </ul>
+
+      <p>Automated monitoring outcomes do not necessarily constitute a final determination of wrongdoing, illegality, or policy violations. In certain circumstances, flagged activity may be subject to human oversight, internal review, escalation procedures, or additional investigation before final action is taken.</p>
+
+      <p>Themegatrader may combine automated tools with manual review procedures to ensure decisions are proportionate, risk-based, fair, and reasonably justified.</p>
+
+      <p>Users acknowledge and agree that Themegatrader may implement temporary account restrictions, transaction delays, freezes, enhanced verification measures, or service limitations where reasonably necessary to protect user accounts, prevent unauthorized transactions, maintain platform security, comply with legal and regulatory obligations, prevent fraud, cybercrime, financial crime, or abuse of Services, and safeguard Themegatrader systems, business operations, or other users.</p>
+
+      <p>Where applicable under law, users may contact Themegatrader to seek clarification regarding certain automated decisions, contest or challenge restricted activities, submit supporting documentation, request additional review of compliance-related outcomes, or exercise applicable privacy or data protection rights.</p>
+
+      <p>Themegatrader shall implement reasonable safeguards to ensure fairness, transparency, accountability, proportionality, non-discrimination, accuracy, and regulatory compliance in relation to automated processing activities.</p>
+
+      <p>Such safeguards may include:</p>
+      <ul class="tl">
+        <li>Human oversight where appropriate;</li>
+        <li>Risk-based review procedures;</li>
+        <li>Periodic monitoring and calibration of automated systems;</li>
+        <li>Data quality assessments;</li>
+        <li>Internal compliance audits;</li>
+        <li>Access controls and governance measures;</li>
+        <li>Security monitoring and incident response procedures.</li>
+      </ul>
+
+      <p>Nothing in this section shall limit Themegatrader's ability to take immediate action where necessary to protect users, prevent unlawful conduct, comply with legal obligations, or mitigate cybersecurity, fraud, sanctions, AML/CTF, operational, or financial risks.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         16. DATA PROTECTION OFFICER (DPO)
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s16">
+      <div class="sec-head">
+        <span class="sec-num">16</span>
+        <h2>DATA PROTECTION OFFICER (DPO)</h2>
+      </div>
+
+      <p>Themegatrader recognizes the importance of accountability, transparency, and lawful processing of personal information and has designated responsibility for privacy governance, regulatory compliance oversight, and data protection coordination in accordance with applicable legal and regulatory obligations, including the Nigeria Data Protection Act, 2023 (NDPA).</p>
+
+      <p>The Data Protection function within Themegatrader is responsible for overseeing privacy compliance, strengthening internal governance, monitoring regulatory obligations, supporting lawful processing activities, and ensuring that personal information is processed securely, fairly, transparently, and in accordance with applicable data protection requirements.</p>
+
+      <p>The Data Protection Officer (DPO) and/or designated privacy compliance personnel oversee matters relating to:</p>
+      <ul class="tl">
+        <li>Compliance with the Nigeria Data Protection Act, 2023 (NDPA) and applicable privacy regulations;</li>
+        <li>Monitoring adherence to internal privacy, confidentiality, cybersecurity, and data governance policies;</li>
+        <li>Privacy risk management and implementation of appropriate mitigation controls;</li>
+        <li>Regulatory reporting, engagement, and communication with supervisory authorities where required;</li>
+        <li>Data Protection Impact Assessments (DPIAs) and privacy-related risk assessments;</li>
+        <li>Monitoring lawful processing activities and compliance frameworks;</li>
+        <li>Responding to user privacy concerns, complaints, and inquiries;</li>
+        <li>Receiving, managing, and responding to data subject requests;</li>
+        <li>Managing personal data access, correction, deletion, portability, and objection requests;</li>
+        <li>Oversight of internal privacy investigations, incident reviews, and remediation efforts;</li>
+        <li>Supporting breach reporting procedures and compliance monitoring activities;</li>
+        <li>Advising on cross-border data transfers, retention practices, consent management, and lawful processing requirements;</li>
+        <li>Promoting privacy awareness, employee training, and accountability measures across Themegatrader operations.</li>
+      </ul>
+
+      <p>Users may contact Themegatrader regarding any privacy, compliance, or data protection-related matter, including but not limited to requests to access personal information, requests to correct or update inaccurate information, requests for deletion or erasure, complaints regarding privacy rights, concerns relating to unlawful processing, questions regarding data retention, transfers, or disclosures, objections to certain categories of processing, requests concerning consent withdrawal, and questions relating to cybersecurity or data protection safeguards.</p>
+
+      <div class="sub">
+        <h3>Data Protection Contact Details</h3>
+        <p>For privacy-related concerns, complaints, compliance inquiries, or data subject rights requests, users may contact Themegatrader through:</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="cc-lbl">Compliance &amp; Data Protection Email</div>
+            <div class="cc-val">compliance@themegatrader.com</div>
+            <div style="margin-top:8px;"><a href="mailto:compliance@themegatrader.com">compliance@themegatrader.com</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-lbl">General Privacy &amp; Support Contact</div>
+            <div class="cc-val">info@themegatrader.com</div>
+            <div style="margin-top:8px;"><a href="mailto:info@themegatrader.com">info@themegatrader.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:18px;">Themegatrader shall make commercially reasonable efforts to acknowledge, investigate, and respond to privacy-related inquiries, complaints, and lawful requests within timelines prescribed under applicable law or within a reasonable timeframe where no statutory deadline exists.</p>
+
+      <p>Themegatrader reserves the right to decline, restrict, or delay responses to requests where permitted by law, including circumstances involving ongoing fraud investigations, regulatory reporting obligations, AML/CTF compliance requirements, protection of legal claims or disputes, security risks, or requests that are excessive, repetitive, manifestly unfounded, or unlawful.</p>
+
+      <p>Nothing in this section shall limit a user's statutory right to file a complaint with the relevant supervisory authority, including the Nigeria Data Protection Commission (NDPC), where applicable.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         17. UPDATES TO THIS PRIVACY POLICY
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s17">
+      <div class="sec-head">
+        <span class="sec-num">17</span>
+        <h2>UPDATES TO THIS PRIVACY POLICY</h2>
+      </div>
+
+      <p>Themegatrader reserves the right to amend, revise, update, modify, supplement, or replace this Privacy Policy from time to time in order to reflect changes in legal obligations, regulatory requirements, operational practices, technological advancements, security standards, business operations, platform functionality, or service offerings.</p>
+
+      <p>Themegatrader may update this Privacy Policy for reasons including, but not limited to:</p>
+      <ul class="tl">
+        <li>Changes in applicable laws, regulations, or regulatory guidance;</li>
+        <li>Amendments to the Nigeria Data Protection Act, 2023 (NDPA) or related implementation frameworks;</li>
+        <li>Regulatory directives, enforcement actions, or compliance requirements issued by competent authorities;</li>
+        <li>Improvements to cybersecurity systems, fraud prevention measures, and data protection safeguards;</li>
+        <li>Introduction of new products, features, applications, telecommunications services, APIs, or digital asset functionality;</li>
+        <li>Changes in the categories of personal data processed;</li>
+        <li>Changes to data retention practices, lawful bases for processing, or international transfer mechanisms;</li>
+        <li>Service enhancements, platform redesigns, or operational restructuring;</li>
+        <li>Technological developments, including automation, analytics, identity verification, artificial intelligence systems, or blockchain-related services;</li>
+        <li>Changes in third-party service providers, infrastructure, vendors, processors, or compliance partners.</li>
+      </ul>
+
+      <p>Updated versions of this Privacy Policy will be published and made available through Themegatrader's official platform, including the website at www.themegatrader.com.</p>
+
+      <p>Themegatrader may also provide notice of material changes through one or more of the following communication channels:</p>
+      <ul class="tl">
+        <li>Email notifications to registered users;</li>
+        <li>In-platform or in-application notifications;</li>
+        <li>Account dashboard announcements;</li>
+        <li>Website banners or alerts;</li>
+        <li>Push notifications, where applicable;</li>
+        <li>Requests for renewed acknowledgment or consent where legally required.</li>
+      </ul>
+
+      <div class="sub">
+        <h3>A. Minor or Administrative Updates</h3>
+        <p>Minor updates may include formatting revisions, typographical corrections, clarifications of existing wording, non-material operational adjustments, and contact information updates. Such updates may take effect immediately upon publication unless otherwise stated.</p>
+      </div>
+
+      <div class="sub">
+        <h3>B. Material Changes</h3>
+        <p>Material changes may include modifications involving:</p>
+        <ul class="tl">
+          <li>New categories of personal data collected;</li>
+          <li>New lawful bases for processing;</li>
+          <li>Significant changes to user rights;</li>
+          <li>Expanded data-sharing arrangements;</li>
+          <li>New international data transfer practices;</li>
+          <li>Changes affecting security, retention, profiling, or automated decision-making.</li>
+        </ul>
+        <p>Where legally required, Themegatrader may provide additional notice and obtain user acknowledgment or consent before such material changes become effective.</p>
+      </div>
+
+      <p>Users are encouraged to periodically review this Privacy Policy to remain informed about how Themegatrader processes and protects personal information.</p>
+
+      <p>Continued access to or use of Themegatrader Services following publication of revised terms shall constitute acknowledgment, acceptance, and agreement to the updated Privacy Policy, to the extent permitted by applicable law.</p>
+
+      <p>The most current version of this Privacy Policy shall always contain a revised "Last Updated" date displayed at the beginning of the document to indicate when changes became effective.</p>
+
+      <p>If a user disagrees with any revised terms of this Privacy Policy, the user may discontinue use of Themegatrader Services and request account closure, subject to applicable legal, compliance, retention, or regulatory obligations that may require continued storage of certain information.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         18. JURISDICTION AND GOVERNING LAW
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s18">
+      <div class="sec-head">
+        <span class="sec-num">18</span>
+        <h2>JURISDICTION AND GOVERNING LAW</h2>
+      </div>
+
+      <p>This Privacy Policy shall be governed by, interpreted, and construed in accordance with the laws of the Federal Republic of Nigeria, without regard to any conflict of law principles that may otherwise require the application of the laws of another jurisdiction.</p>
+
+      <p>Themegatrader, owned and operated by Themega Global Limited, conducts its business activities in compliance with applicable Nigerian laws, regulations, directives, and industry standards relating to privacy, financial compliance, cybersecurity, anti-money laundering, telecommunications, digital asset services, consumer protection, and lawful business operations.</p>
+
+      <p>Accordingly, Themegatrader operates in accordance with, including but not limited to:</p>
+      <ul class="tl">
+        <li>The Nigeria Data Protection Act, 2023 (NDPA) and applicable implementation frameworks issued by the relevant authority;</li>
+        <li>Regulations, directives, guidance notes, and compliance obligations issued by the relevant supervisory and regulatory authorities;</li>
+        <li>Applicable Anti-Money Laundering (AML), Counter-Terrorism Financing (CTF), fraud prevention, sanctions screening, and financial crime prevention obligations;</li>
+        <li>Applicable cybersecurity, electronic transaction, telecommunications, taxation, financial compliance, and consumer protection laws;</li>
+        <li>Judicial orders, lawful government requests, regulatory investigations, subpoenas, or statutory compliance obligations where legally enforceable.</li>
+      </ul>
+
+      <p>Themegatrader reserves the right to process, disclose, preserve, restrict, monitor, or transfer personal information where necessary to comply with legal obligations, respond to lawful regulatory or law enforcement requests, detect, investigate, prevent, or prosecute fraud, cybercrime, financial crime, money laundering, terrorist financing, or other unlawful activities, and protect the rights, property, safety, systems, users, employees, contractors, business partners, or lawful interests of Themegatrader.</p>
+
+      <div class="sub">
+        <h3>International Users and Cross-Border Compliance</h3>
+        <p>Themegatrader may make its Services available to users located outside Nigeria. Where users access or use the Themegatrader Platform from jurisdictions outside Nigeria, such users acknowledge and agree that:</p>
+        <ul class="tl">
+          <li>Their information may be collected, transferred, processed, and stored in Nigeria or other jurisdictions where Themegatrader or its service providers operate;</li>
+          <li>Personal information may be subject to Nigerian legal and regulatory requirements;</li>
+          <li>Themegatrader may implement supplementary safeguards to comply with mandatory privacy obligations in foreign jurisdictions where applicable.</li>
+        </ul>
+        <p>Where required by applicable law, Themegatrader will make commercially reasonable efforts to comply with relevant international privacy and data protection obligations, including cross-border transfer requirements, lawful processing obligations, and user rights protections to the extent legally applicable.</p>
+        <p>Nothing in this Privacy Policy shall be interpreted as limiting Themegatrader's ability to comply with lawful obligations imposed by competent authorities in any jurisdiction where compliance is legally required.</p>
+      </div>
+
+      <div class="sub">
+        <h3>Dispute Resolution and Jurisdiction</h3>
+        <p>Any dispute, controversy, claim, complaint, or disagreement arising out of, relating to, or connected with this Privacy Policy, the collection, processing, retention, disclosure, or handling of personal data, the use of Themegatrader Services, or privacy rights, obligations, or compliance matters shall, where legally permissible, first be addressed through good-faith discussions, internal complaint resolution procedures, or alternative dispute resolution mechanisms before litigation is pursued.</p>
+        <p>Where disputes cannot be resolved amicably, such disputes shall be submitted to the exclusive jurisdiction of the competent courts of the Federal Republic of Nigeria, and users irrevocably submit to the authority and jurisdiction of such courts, except where mandatory local law grants non-waivable jurisdictional rights.</p>
+        <p>Themegatrader reserves the right to seek interim, injunctive, equitable, or protective relief in any competent jurisdiction where necessary to protect confidential information, prevent fraud or unlawful conduct, preserve platform integrity and security, enforce legal rights and obligations, or protect business operations, systems, assets, or users.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         19. INDEMNITY AND LIMITATION OF LIABILITY
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s19">
+      <div class="sec-head">
+        <span class="sec-num">19</span>
+        <h2>INDEMNITY AND LIMITATION OF LIABILITY</h2>
+      </div>
+
+      <p>By accessing or using Themegatrader Services, users agree, to the fullest extent permitted by applicable law, to indemnify, defend, and hold harmless Themega Global Limited ("Themegatrader"), its parent companies, subsidiaries, affiliates, shareholders, directors, officers, employees, contractors, consultants, agents, licensors, representatives, successors, and assigns from and against any claims, demands, actions, proceedings, liabilities, damages, losses, penalties, costs, judgments, settlements, fines, expenses, or obligations (including reasonable legal fees, compliance costs, and investigation expenses) arising out of or related to:</p>
+      <ul class="tl">
+        <li>Any violation or breach of this Privacy Policy;</li>
+        <li>Misuse, abuse, unlawful use, or unauthorized use of Themegatrader Services;</li>
+        <li>Violation of applicable laws, regulations, sanctions, or legal obligations by the user;</li>
+        <li>Fraudulent conduct, deceptive activities, money laundering, unauthorized transactions, or criminal misuse of the Platform;</li>
+        <li>Unauthorized access to accounts, systems, or personal information resulting from user negligence, failure to maintain security credentials, weak password practices, disclosure of authentication information, phishing incidents, compromised devices, or failure to implement reasonable account security measures;</li>
+        <li>User negligence, misconduct, misrepresentation, or breach of contractual obligations;</li>
+        <li>Disputes between users and third parties arising from use of the Services;</li>
+        <li>Infringement of rights of third parties resulting from user conduct;</li>
+        <li>Submission of inaccurate, misleading, fraudulent, or incomplete information to Themegatrader.</li>
+      </ul>
+
+      <p>Users acknowledge and agree that they are solely responsible for maintaining the confidentiality, integrity, and security of their account credentials, devices, authentication methods, recovery information, wallet access credentials, and any personal systems used to access Themegatrader Services.</p>
+
+      <p>To the fullest extent permitted by applicable law, Themegatrader, its affiliates, directors, officers, employees, contractors, agents, and service providers shall not be liable for any direct, indirect, incidental, punitive, exemplary, special, consequential, or economic damages, losses, liabilities, or expenses arising from or connected with the use of, inability to use, interruption of, or reliance upon Themegatrader Services.</p>
+
+      <p>Without limitation, Themegatrader shall not be liable for:</p>
+      <ul class="tl">
+        <li>Indirect, incidental, punitive, exemplary, or consequential damages;</li>
+        <li>Loss of profits, revenue, goodwill, business opportunities, savings, or anticipated earnings;</li>
+        <li>Loss, theft, corruption, delay, compromise, or inaccessibility of data;</li>
+        <li>Loss of digital assets, cryptocurrencies, or wallet balances resulting from third-party attacks, phishing, compromised credentials, malware, blockchain vulnerabilities, exchange failures, smart contract exploits, social engineering, or external security incidents beyond Themegatrader's reasonable control;</li>
+        <li>Service interruptions, downtime, delays, outages, latency issues, telecommunications failures, internet disruptions, third-party vendor failures, hosting disruptions, cyberattacks, denial-of-service incidents, force majeure events, or circumstances outside Themegatrader's reasonable control;</li>
+        <li>Errors arising from inaccurate information provided by users;</li>
+        <li>Losses arising from regulatory actions, government restrictions, sanctions, compliance obligations, or lawful suspension of Services;</li>
+        <li>Temporary restrictions, suspensions, investigations, or account freezes implemented for fraud prevention, AML/CTF compliance, cybersecurity, sanctions screening, or regulatory purposes;</li>
+        <li>Failures or interruptions caused by blockchain networks, validators, miners, decentralized systems, telecommunications providers, financial institutions, payment processors, or external infrastructure dependencies.</li>
+      </ul>
+
+      <p>Themegatrader makes commercially reasonable efforts to maintain the security, availability, reliability, and integrity of its systems but does not warrant that Services will be uninterrupted, error-free, completely secure, continuously available, or free from vulnerabilities, malicious attacks, or technological failures.</p>
+
+      <p>Users acknowledge that cryptocurrency transactions involve inherent technological, cybersecurity, market, and operational risks; internet-based systems, telecommunications infrastructure, APIs, digital wallets, and blockchain technologies are subject to vulnerabilities beyond Themegatrader's reasonable control; and no cybersecurity, authentication, encryption, or fraud prevention system can guarantee absolute protection against unauthorized access or malicious conduct.</p>
+
+      <p>Where permitted by law, Themegatrader's aggregate liability arising out of or relating to this Privacy Policy, whether in contract, tort, negligence, statutory duty, or otherwise, shall be limited to the maximum extent permitted under applicable law.</p>
+
+      <p>Nothing in this Privacy Policy shall exclude, restrict, waive, or limit liability where such limitation or exclusion is prohibited under applicable law, including obligations imposed under the Nigeria Data Protection Act, 2023 (NDPA), applicable consumer protection laws, fraud obligations, or any liability arising from gross negligence, willful misconduct, unlawful conduct, or statutory non-compliance where exclusion is not legally permissible.</p>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         20. CONTACT US
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tsec" id="s20">
+      <div class="sec-head">
+        <span class="sec-num">20</span>
+        <h2>CONTACT US</h2>
+      </div>
+
+      <p>If you have any questions, concerns, complaints, requests, or enquiries relating to this Privacy Policy, the processing of your personal information, privacy rights, account security, or data protection matters, Themegatrader encourages you to contact us using the contact details provided below.</p>
+
+      <p>Themegatrader is committed to addressing privacy-related concerns in a fair, transparent, timely, and commercially reasonable manner and will make reasonable efforts to respond to valid enquiries, complaints, and requests in accordance with applicable legal and regulatory requirements.</p>
+
+      <div class="sub">
+        <h3>Company Contact Information</h3>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="cc-lbl">Company</div>
+            <div class="cc-val">Themega Global Limited (Themegatrader)</div>
+            <div style="margin-top:10px;"><a href="https://www.themegatrader.com" target="_blank" rel="noopener">www.themegatrader.com</a></div>
+            <div><a href="mailto:info@themegatrader.com">info@themegatrader.com</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-lbl">Data Protection and Compliance Contact</div>
+            <div class="cc-val">Compliance &amp; Data Protection Team</div>
+            <div style="margin-top:10px;"><a href="mailto:compliance@themegatrader.com">compliance@themegatrader.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3>Types of Enquiries</h3>
+        <p>Users may contact Themegatrader regarding matters including, but not limited to:</p>
+        <ul class="tl">
+          <li>Data subject access requests;</li>
+          <li>Requests to correct or update personal information;</li>
+          <li>Data deletion or erasure requests;</li>
+          <li>Restriction or objection to data processing;</li>
+          <li>Withdrawal of consent (where applicable);</li>
+          <li>Data portability requests;</li>
+          <li>Privacy concerns or confidentiality matters;</li>
+          <li>Complaints relating to personal information handling;</li>
+          <li>Compliance and regulatory enquiries;</li>
+          <li>Security incidents or suspected unauthorized access;</li>
+          <li>Fraud concerns or suspicious account activity;</li>
+          <li>Questions regarding international data transfers;</li>
+          <li>Concerns relating to automated decision-making or fraud monitoring;</li>
+          <li>Requests relating to cookies, tracking technologies, or user preferences.</li>
+        </ul>
+      </div>
+
+      <div class="sub">
+        <h3>Response Times and Limitations</h3>
+        <p>Themegatrader may request identity verification, supporting documentation, account authentication, or additional information before responding to requests in order to protect account security, prevent fraud or unauthorized disclosure, verify lawful entitlement to requested information, and ensure compliance with applicable legal obligations.</p>
+        <p>Themegatrader shall make commercially reasonable efforts to respond to valid privacy and compliance-related requests within applicable legal timeframes or, where no statutory timeframe applies, within a reasonable period.</p>
+        <p>Where users believe that Themegatrader has not adequately addressed a complaint or where they believe their rights under applicable data protection laws have been violated, users may have the right to lodge a complaint with a competent supervisory, regulatory, or data protection authority.</p>
+        <p>Where applicable, users may submit complaints to the Nigeria Data Protection Commission ("NDPC") or another competent regulatory authority with jurisdiction over the matter.</p>
+        <p>Nothing in this section limits any statutory rights or legal remedies available to users under applicable privacy, consumer protection, financial services, cybersecurity, or regulatory laws.</p>
+      </div>
+
+      <hr class="rule" />
+      <p style="text-align:center; font-size:13px; color:var(--text-muted); line-height:1.8;">
+        <strong style="color:var(--text-secondary); display:block; margin-bottom:4px;">END OF PRIVACY POLICY</strong>
+        © Themega Global Limited (Themegatrader). All rights reserved.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => btt.classList.toggle('show', scrollY > 500));
+  btt.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.sb-nav a').forEach(a => a.classList.remove('active'));
+        const a = document.querySelector(`.sb-nav a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  document.querySelectorAll('.tsec').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
